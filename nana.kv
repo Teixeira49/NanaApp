@@ -1,0 +1,13 @@
+<MyLayout>:
+    orientation: 'vertical'
+    padding: 50
+
+    Button:
+        size_hint: .25, .25
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+        on_press: root.callback()
+        Image:
+            source: './Images/mic_icon_green.png'
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
