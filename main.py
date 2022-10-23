@@ -44,6 +44,14 @@ class MyLayout(Widget):
                 talk('Reproduciendo ' + song)
                 pywhatkit.playonyt(song)
 
+            if 'mensaje' in command:
+                #se debe implementar una opción que deje buscar contactos por nombre, y extraer el número de ahí
+                talk('¿Qué quieres decirle?')
+                mensaje = take_command()
+                #número de angélica como prueba
+                #debería mandar el mensaje automáticamente
+                pywhatkit.sendwhatmsg_instantly('+584120999401', mensaje, 3, True, 3)
+
 
         run_nana()
 
