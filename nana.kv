@@ -4,10 +4,14 @@
 
     Button:
         size_hint: .25, .25
+        size: 200, 200
         pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        pos: 200, 200
 
         on_press: root.callback()
         Image:
             source: './Images/mic_icon_green.png'
             center_x: self.parent.center_x
             center_y: self.parent.center_y
+            size: self.parent.size
+            stretch: True
