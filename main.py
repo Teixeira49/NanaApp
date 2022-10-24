@@ -1,19 +1,17 @@
 from kivy.app import App
 from kivy.uix.widget import Widget
-from kivy.uix.label import Label
-from kivy.uix.image import Image
-from kivy.uix.button import Button
-from kivy.uix.textinput import TextInput
-from kivy.uix.behaviors import ButtonBehavior
+from kivymd.app import MDApp
+from kivymd.uix.screen import MDScreen
 from kivy.lang import Builder
 import speech_recognition as sr
 import pyttsx3
 import pywhatkit
 
-
-
-class MyLayout(Widget):
-
+class NanaApp(MDApp):
+    def build(self):
+        self.theme_cls.theme_style = "Dark"
+        self.theme_cls.primary_palette = "Green"
+        return
     def callback(self):
 
         listener = sr.Recognizer()
@@ -38,9 +36,10 @@ class MyLayout(Widget):
                     command = listener.recognize_google(voice)
                     command = command.lower()
                     print(command)
+                    return command
             except:
                 pass
-            return command
+
 
         def run_nana():
             order = take_command()
@@ -50,18 +49,13 @@ class MyLayout(Widget):
                 pywhatkit.playonyt(song)
 
             if 'mensaje' in order:
-                #se debe implementar una opción que deje buscar contactos por nombre, y extraer el número de ahí
+                # se debe implementar una opción que deje buscar contactos por nombre, y extraer el número de ahí
                 talk('¿Qué quieres decirle?')
                 mensaje = take_command()
-                #número de angelica como prueba
+                # número de angelica como prueba
                 pywhatkit.sendwhatmsg_instantly('+584120999401', mensaje, 11, True, 6)
 
-
         run_nana()
-
-class NanaApp(App):
-    def build(self):
-        return MyLayout()
 
 
 if __name__ == "__main__":
