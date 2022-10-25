@@ -12,5 +12,9 @@ class NANA(App):
 
 
 
+
+
+
+
 if __name__ == "__main__":
     NANA().run()
