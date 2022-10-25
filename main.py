@@ -27,7 +27,7 @@ class NanaApp(MDApp):
             nanavoice.runAndWait()
 
         def take_command():
-
+            command = ''
             try:
                 with sr.Microphone() as source:
                     print("Escuchando...")
@@ -36,9 +36,9 @@ class NanaApp(MDApp):
                     command = listener.recognize_google(voice)
                     command = command.lower()
                     print(command)
-                    return command
             except:
                 pass
+            return command
 
 
         def run_nana():
