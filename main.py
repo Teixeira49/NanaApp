@@ -7,7 +7,7 @@ from kivy.uix.button import Button
 class NANA(App):
     def build(self):
         #return
-        boton = Button(text = "Presioname", font_size=30, size_hint=(0.3, 0.1), pos=(250,250), background_color=("red"))
+        boton = Button(text = "click mee", font_size=30, size_hint=(0.3, 0.1), pos=(250,250), background_color=("red"))
         return boton
 
 
