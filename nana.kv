@@ -1,4 +1,52 @@
+MDScreen:
 
+    MDLabel:
+        text: "Pulse para hablar o escriba que desea hacer:"
+        color: 100,100,100
+        font_size: "20sp"
+        pos_hint : {'center_x': 0.75, 'center_y': 0.9}
+        bold: True
+        italic: True
+
+    MDFloatingActionButton:
+        icon: "microphone"
+        icon_color: "white"
+        theme_icon_color: "Custom"
+        pos_hint : {'center_x': 0.5, 'center_y': 0.70}
+        on_press : app.callback()
+        size_hint: 0.25, 0.25
+        icon_size: "80sp"
+
+    MDTextField:
+        id: data
+        hint_text: "¿Que desea hacer?"
+        helper_text_mode: "on_focus"
+        color_mode: 'accent'
+        mode: "rectangle"
+        pos_hint : {'center_y': 0.5}
+        max_text_length: 30
+
+    MDTextField:
+        id: msg
+        hint_text: "Mensaje a enviar"
+        helper_text_mode: "on_focus"
+        color_mode: 'accent'
+        mode: "rectangle"
+        pos_hint : {'center_y': 0.3}
+        max_text_length: 30
+
+    MDRectangleFlatButton:
+        text: "Buscar"
+        text_color: "white"
+        line_color: "green"
+        on_press: app.search()
+        pos_hint : {'center_x': 0.4}
+    MDRectangleFlatButton:
+        text: "Wa"
+        text_color: "white"
+        line_color: "green"
+        on_press: app.send_people()
+        pos_hint : {'center_x': 0.6}
 
 
 
