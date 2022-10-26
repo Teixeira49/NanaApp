@@ -3,6 +3,7 @@ from kivy.uix.widget import Widget
 from kivymd.app import MDApp
 from kivymd.uix.screen import MDScreen
 from kivy.lang import Builder
+from kivy.garden.notification import Notification
 import speech_recognition as sr
 import pyttsx3
 import pywhatkit
@@ -12,6 +13,8 @@ class NanaApp(MDApp):
         self.theme_cls.theme_style = "Dark"
         self.theme_cls.primary_palette = "Green"
         return
+
+
     def callback(self):
 
         listener = sr.Recognizer()
@@ -26,6 +29,13 @@ class NanaApp(MDApp):
             nanavoice.say(text)
             nanavoice.runAndWait()
 
+        def notify():
+            Notification().open(
+                title="Recordatorio",
+                icon="./Images/logo blanco.png",
+                message="Los granos integrales son preferibles a los productos de harina blanca o pasta para la hipertensión",
+                timeout=5,
+            )
         def take_command():
             command = ''
             try:
@@ -33,6 +43,7 @@ class NanaApp(MDApp):
                     print("Escuchando...")
                     listener.adjust_for_ambient_noise(source)
                     voice = listener.listen(source)
+                    listener.recognize_google(voice, language="es-VE")
                     command = listener.recognize_google(voice)
                     command = command.lower()
                     print(command)
@@ -40,9 +51,9 @@ class NanaApp(MDApp):
                 pass
             return command
 
-
         def run_nana():
             order = take_command()
+            notify()
             if 'reproduce' in order:
                 song = order.replace('reproduce', '')
                 talk('Reproduciendo ' + song)
@@ -54,6 +65,10 @@ class NanaApp(MDApp):
                 mensaje = take_command()
                 # número de angelica como prueba
                 pywhatkit.sendwhatmsg_instantly('+584120999401', mensaje, 11, True, 6)
+
+            if 'busca' in order:
+                busqueda = order.replace('busca', '')
+                pywhatkit.search(busqueda)
 
         run_nana()
 
