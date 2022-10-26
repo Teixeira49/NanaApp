@@ -68,10 +68,10 @@ def run_nana(order):
     elif "recordatorio" in order:
         talk("¿Que desea recordar?")
         mensaje = take_command()
-    elif "Hipertenso" in order: # Modificar cuando tengamos la BD implementada
+    elif "hipertenso" in order: # Modificar cuando tengamos la BD implementada # ["hipertenso", "hipertensa", "hipertension"]
         talk(f"{salud[0]}{salud[1]}, {salud[2]}, {salud[3]} y {salud[4]}") # https://www.medicalnewstoday.com/articles/es/alimentos-a-evitar-con-presion-arterial-alta#alimentos-salados
-    elif "Diabetes" in order:
-        talk(f"{salud[0]}{salud[1]}{salud[3]} y {salud[7]}") # 
+    elif  "diabetes" in order: #["diabetes", "diabetico", "diabetica", "diabete"]
+        talk(f"{salud[0]}{salud[1]}{salud[3]} y {salud[7]}")
 
 # https://es.stackoverflow.com/questions/278377/guardar-el-valor-del-text-input-en-una-base-de-datos # UNA mausqueherramienta misteriosa que nos servira mas adelante
 # https://stackoverflow.com/questions/55984129/attributeerror-could-not-find-pyaudio-check-installation-cant-use-speech-re
