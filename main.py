@@ -33,8 +33,12 @@ class NanaApp(MDApp):
         f.run_nana(order)
 
     def send_people(self):
+        json = {"wilt":"+584123080460",
+                "angelica":"+584120999401",
+                "kevin":"+584128019758"}
+        persona = self.root.ids.people.text
         mensaje = self.root.ids.msg.text
-        f.send_nana(mensaje)
+        f.send_nana(json,persona,mensaje)
 
 if __name__ == "__main__":
     NanaApp().run()
