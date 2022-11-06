@@ -1,30 +1,84 @@
 MDScreen:
 
+
     MDLabel:
-        text: "Pulse para hablar o escriba que desea hacer:"
-        color: 100,100,100
-        font_size: "20sp"
-        pos_hint : {'center_x': 0.75, 'center_y': 0.9}
+        text: "NANA"
+        color: 0,0,0
+        font_size: "30sp"
+        pos_hint : {'center_y': 0.95}
+        halign: 'center'
         bold: True
-        italic: True
+        font_family: 'niramit'
+
+    MDFloatingActionButton:
+        icon: "account"
+        md_bg_color:[0.34,1.93,1.24,1]
+        icon_color: "white"
+        theme_icon_color: "Custom"
+        pos_hint : {'center_x': 0.95, 'center_y': 0.95}
+        size_hint: 0.075, 0.07
+        icon_size_hint: "80sp"
+        padding: 5
+        on_press: root.current = "profile.kv"
+
+    MDRectangleFlatButton:
+        text: "Help"
+        text_color: "black"
+        line_color: "black"
+        md_bg_color:[1,0,0,1]
+        pos_hint : {'center_x': 0.1, 'center_y': 0.95}
+        size_hint: 0.05, 0.015
+
+    MDLabel:
+        text: "Bienvenido persona"
+        color: 0,0,0
+        font_size: "20sp"
+        pos_hint : {'center_y': 0.85}
+        halign: 'center'
+        font_family: 'khmer'
+
+
+#MICRO
 
     MDFloatingActionButton:
         icon: "microphone"
         icon_color: "white"
-        theme_icon_color: "Custom"
         pos_hint : {'center_x': 0.5, 'center_y': 0.70}
         on_press : app.callback()
-        size_hint: 0.25, 0.25
-        icon_size: "80sp"
+        size_hint: 0.25, 0.22
+        icon_size: "120sp"
+
+    MDLabel:
+        text: "Presione aqui y habla"
+        color: 0,0,0
+        font_size: "20sp"
+        pos_hint : {'center_y': 0.55}
+        halign: 'center'
+        font_family: 'khmer'
+
+
+
+#CAMPOS
 
     MDTextField:
         id: data
-        hint_text: "¿Que desea hacer?"
+        hint_text: "¿Que desea buscar?"
         helper_text_mode: "on_focus"
         color_mode: 'accent'
         mode: "rectangle"
-        pos_hint : {'center_y': 0.5}
-        max_text_length: 30
+        pos_hint : {'center_x': 0.4, 'center_y': 0.45}
+        max_text_length: 20
+        size_hint: 0.6, 0.1
+        icon_right: "android"
+
+    MDFloatingActionButton:
+        icon: "search"
+        line_color: "green"
+        on_press: app.search()
+        pos_hint : {'center_x': 0.8, 'center_y': 0.45}
+
+
+
 
     MDTextField:
         id: people
@@ -32,8 +86,9 @@ MDScreen:
         helper_text_mode: "on_focus"
         color_mode: 'accent'
         mode: "rectangle"
-        pos_hint : {'center_y': 0.4}
-        max_text_length: 30
+        pos_hint : {'center_x': 0.25, 'center_y': 0.2}
+        size_hint: 0.2, 0.1
+        max_text_length: 15
 
     MDTextField:
         id: msg
@@ -41,22 +96,25 @@ MDScreen:
         helper_text_mode: "on_focus"
         color_mode: 'accent'
         mode: "rectangle"
-        pos_hint : {'center_y': 0.3}
-        max_text_length: 30
+        pos_hint : {'center_x': 0.75, 'center_y': 0.2}
+        size_hint: 0.5, 0.1
+        max_text_length:
+
+
+
+
+
+#BOTONES
+
+
 
     MDRectangleFlatButton:
-        text: "Buscar"
-        text_color: "white"
-        line_color: "green"
-        on_press: app.search()
-        pos_hint : {'center_x': 0.4}
-    MDRectangleFlatButton:
-        text: "Wa"
-        text_color: "white"
-        line_color: "green"
+        text: "SMS"
+        text_color: "black"
+        md_bg_color:[0,1,1,1]
+        line_color: "black"
         on_press: app.send_people()
-        pos_hint : {'center_x': 0.6}
-
+        pos_hint : {'center_x': 0.5}
 
 
 
