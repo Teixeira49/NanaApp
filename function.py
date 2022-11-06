@@ -4,7 +4,10 @@ from kivy.uix.widget import Widget
 from kivymd.app import MDApp
 from kivymd.uix.screen import MDScreen
 from kivy.lang import Builder
-from pyautogui import sleep
+#from kivy.garden.notification import Notification
+from googlesearch import search
+import webbrowser
+
 import pyautogui as pg
 import speech_recognition as sr
 import pyttsx3
@@ -34,6 +37,14 @@ def talk(text):
     nanavoice.say(text)
     nanavoice.runAndWait()
 
+'''def notify():
+        Notification().open(
+            title="Recordatorio",
+            icon="./Images/logo blanco.png",
+            message="Los granos integrales son preferibles a los productos de harina blanca o pasta para la hipertensión",
+            timeout=5,
+        )'''
+
 def take_command(): # Comando principal
     listener = sr.Recognizer()
     command = ''
@@ -55,32 +66,49 @@ def take_command(): # Comando principal
 
 def run_nana(order):
     now = dt.now()
+
     if 'reproduce' in order: # optimizar porfavor
         song = order.replace('reproduce', '')
         talk('Reproduciendo ' + song)
         pywhatkit.playonyt(song)
+
     elif 'mensaje' in order:
         # se debe implementar una opción que deje buscar contactos por nombre, y extraer el número de ahí
         talk('¿Qué quieres decirle?')
         mensaje = take_command()
         # número de angelica como prueba
         pywhatkit.sendwhatmsg_instantly('+584120999401', mensaje, 11, True, 6)
+
     elif "hoy" in order or "fecha" in order:
         talk(f"Hoy estamos a {now.day} de {now.month} del año {now.year}")
+
     elif "hora" in order:
         talk(f"Son las {now.hour} horas con {now.minute} minutos")
+
     elif "recordatorio" in order:
         talk("¿Que desea recordar?")
         mensaje = take_command()
+
     elif "hipertenso" in order: # Modificar cuando tengamos la BD implementada # ["hipertenso", "hipertensa", "hipertension"]
+        #notify()
         talk(f"{salud[0]}{salud[1]}, {salud[2]}, {salud[3]} y {salud[4]}") # https://www.medicalnewstoday.com/articles/es/alimentos-a-evitar-con-presion-arterial-alta#alimentos-salados
+
     elif  "diabetes" in order: #["diabetes", "diabetico", "diabetica", "diabete"]
         talk(f"{salud[0]}{salud[1]}{salud[3]} y {salud[7]}")
+
+    else:
+        lista = search(order)
+        valor = ""
+        for i in lista:
+            if valor == "":
+                valor = i
+                break
+        webbrowser.open_new_tab(valor)
 
 
 def send_nana(json,persona, mensaje):
     now = dt.now()
     for k,v in json.items():
         if persona == k:
-            pywhatkit.sendwhatmsg_instantly(v, mensaje, 20, True, 15)
+            pywhatkit.sendwhatmsg_instantly(v, mensaje, 30, True, 22)
             pg.press("enter")
