@@ -18,7 +18,6 @@ import function as f
 class NanaApp(MDApp):
 
     def build(self):
-        self.theme_cls.theme_style = "Dark"
         self.theme_cls.primary_palette = "Green"
         return
 
@@ -31,14 +30,16 @@ class NanaApp(MDApp):
     def search(self):
         order = self.root.ids.data.text
         f.run_nana(order)
+        self.root.ids.data.text = ""
 
     def send_people(self):
         json = {"wilt":"+584123080460",
-                "angelica":"+584120999401",
-                "kevin":"+584128019758"}
+                "angelica":"+584120999401"}
         persona = self.root.ids.people.text
         mensaje = self.root.ids.msg.text
         f.send_nana(json,persona,mensaje)
+        self.root.ids.people.text = ""
+        self.root.ids.msg.text = ""
 
 if __name__ == "__main__":
     NanaApp().run()
