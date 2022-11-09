@@ -1,0 +1,22 @@
+{
+    "welcome": ["Iniciando Sistemas.", "Activacion de sistema completado."],
+    "Quest": [
+        ["Hola,", "Saludos,", "Holiiii,", "Muy buenas,", "Alooo,", "Que gusto Saludarte,", "¿Que pasa?,"],
+        ["soy", "me dicen", "aqui"],
+        [" Nana.", "la asistente Nana."],
+        ["Qué puedo hacer por ti?", "Que vamos a buscar hoy?", "Que vamos a buscar hoy?", "Que puedo buscar?", "Para que soy buena?", "Que necesitas?"]
+        ],
+    "query": ["Busqueda Marchando", "Su busqueda esta en camino", "Ya estoy que Trabajo en eso"],
+    "result": ["Se encontro el siguiente resultado.", "Encontre esto."],
+    "comedy": [],
+    "weathers":{
+        "key": "5690d56c8ea84aa3a5f9eb04133c83a6",
+        "city_default": "Caracas",
+        "limit_d": 1,
+        "urls": {
+            "weather": "https://api.openweathermap.org/data/2.5/weather?lat=lat_r&lon=lon_r&appid=appid_r&units=metric",
+            "location":"http://api.openweathermap.org/geo/1.0/direct?q=city_name&limit=limit_d&appid=appid_r&units=metric"
+            }
+    }
+}
+
