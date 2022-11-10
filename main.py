@@ -34,7 +34,7 @@ class NanaApp(MDApp):
                 title="Recordatorio",
                 icon="./Images/logo blanco.png",
                 message="Los granos integrales son preferibles a los productos de harina blanca o pasta para la hipertensión",
-                timeout=5,
+                timeout=10,
             )
         def take_command():
             command = ''
