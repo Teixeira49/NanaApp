@@ -1,0 +1,42 @@
+{
+    "perfil": {"Nombre": "Gregory", "Apellido": "Rasputin", "cumpleaos": "21-01-1869", "dni": ""},
+    "welcome": ["Iniciando Sistemas.", "Activacion de sistema completado."],
+    "Quest": [
+        ["Hola,", "Saludos,", "Holiiii,", "Muy buenas,", "Alooo,", "Que gusto Saludarte,", "¿Que pasa?,"],
+        ["soy", "me dicen", "aqui"],
+        [" Nana.", "la asistente Nana."],
+        ["Qué puedo hacer por ti?", "Que vamos a buscar hoy?", "Que vamos a buscar hoy?", "Que puedo buscar?", "Para que soy buena?", "Que necesitas?"]
+        ],
+    "query": ["Busqueda Marchando", "Su busqueda esta en camino", "Ya estoy que Trabajo en eso"],
+    "result": ["Se encontro el siguiente resultado.", "Encontre esto."],
+    "error": [
+        ["Lo siento", "Disculpa", "Perdona"],
+        ["No se te ha entendido", "Puedes repetir esa frase?", "Prueba decir otra vez lo que quieres"]
+        ],
+    "help": "Para ayudar ",
+    "hi": [""],
+    "tell_phrase": {
+        "comedy": [
+            "Eliminar correos no deseados es muy facil: spam comido",
+            "Qué dice una cereza mirándose al espejo?: Cere eza?",
+            "Cual es el peinado favorito de los carteros? Los tirabuzones",
+            "Cual es el colmo de una azafata? Enamorarse del piloto automatico",
+            "Una vez conté un chiste químico, pero no hubo reaccion.",
+            "Cual es el nombre del pez que cae de un cuarto piso? Aaaaaaaaaaaaaaaaaahhhhhh... tun!",
+            "Quién es el papa del príncipe azul? El Blu ray",
+            "Por que un mago no sería bueno en el boxeo? Porque seria el magolpeado"
+        ],
+        "m_story": [],
+        "phrase": []
+    },
+    "weathers":{
+        "key": "5690d56c8ea84aa3a5f9eb04133c83a6",
+        "city_default": "Caracas",
+        "limit_d": 1,
+        "urls": {
+            "weather": "https://api.openweathermap.org/data/2.5/weather?lat=lat_r&lon=lon_r&appid=appid_r&units=metric",
+            "location":"http://api.openweathermap.org/geo/1.0/direct?q=city_name&limit=limit_d&appid=appid_r&units=metric"
+            }
+    }
+}
+
