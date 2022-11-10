@@ -1,4 +1,5 @@
 {
+    "perfil": {"Nombre": "Gregory", "Apellido": "Rasputin", "cumpleaos": "21-01-1869", "dni": ""},
     "welcome": ["Iniciando Sistemas.", "Activacion de sistema completado."],
     "Quest": [
         ["Hola,", "Saludos,", "Holiiii,", "Muy buenas,", "Alooo,", "Que gusto Saludarte,", "¿Que pasa?,"],
@@ -8,7 +9,26 @@
         ],
     "query": ["Busqueda Marchando", "Su busqueda esta en camino", "Ya estoy que Trabajo en eso"],
     "result": ["Se encontro el siguiente resultado.", "Encontre esto."],
-    "comedy": [],
+    "error": [
+        ["Lo siento", "Disculpa", "Perdona"],
+        ["No se te ha entendido", "Puedes repetir esa frase?", "Prueba decir otra vez lo que quieres"]
+        ],
+    "help": "Para ayudar ",
+    "hi": [""],
+    "tell_phrase": {
+        "comedy": [
+            "Eliminar correos no deseados es muy facil: spam comido",
+            "Qué dice una cereza mirándose al espejo?: Cere eza?",
+            "Cual es el peinado favorito de los carteros? Los tirabuzones",
+            "Cual es el colmo de una azafata? Enamorarse del piloto automatico",
+            "Una vez conté un chiste químico, pero no hubo reaccion.",
+            "Cual es el nombre del pez que cae de un cuarto piso? Aaaaaaaaaaaaaaaaaahhhhhh... tun!",
+            "Quién es el papa del príncipe azul? El Blu ray",
+            "Por que un mago no sería bueno en el boxeo? Porque seria el magolpeado"
+        ],
+        "m_story": [],
+        "phrase": []
+    },
     "weathers":{
         "key": "5690d56c8ea84aa3a5f9eb04133c83a6",
         "city_default": "Caracas",
