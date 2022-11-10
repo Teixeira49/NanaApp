@@ -1,0 +1,20 @@
+MDFloatLayout:
+     MDRaisedButton:
+          text: "Calendario"
+          pos_hint:{'center_x': 0.5, 'center_y': 0.5}
+          on_release: app.show_date_picker()
+
+     MDLabel:
+          id: date_label
+          text: "Fecha"
+          pos_hint:{'center_x': 0.92, 'center_y': 0.4}
+
+     MDTextField:
+          id: date_name
+          hint_text: " ¿que hay para esta fecha?"
+          helper_text_mode: "on_focus"
+          color_mode: 'accent'
+          mode: "rectangle"
+          pos_hint : {'center_x': 0.5, 'center_y': 0.3}
+          max_text_length: 1000
+          size_hint: 0.4, 0.1
