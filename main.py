@@ -19,6 +19,17 @@ import json
 with open('data_talk.json', 'r') as file:
     data = json.load(file)
 
+class MDScreen(Screen):
+    pass
+class PersonScreen(Screen):
+#    def on_checkbox_active(self, checkbox, value):
+        #if value == True:
+ #
+        #    print("y")
+        #else:
+#
+        #    print("x")
+        pass
 class NanaApp(MDApp):
 
     def build(self):
