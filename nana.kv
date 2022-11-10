@@ -1,6 +1,16 @@
-MDScreen:
+ScreenManager:
+    id: screen_manager
+    MDScreen:
+        id: principal
+        name: 'MDScreen'
+        manager: 'screen_manager'
+    PersonScreen:
+        id: person_screen
+        name: 'PersonScreen'
+        manager: 'screen_manager'
 
 
+<MDScreen>:
     MDLabel:
         text: "NANA"
         color: 0,0,0
@@ -19,7 +29,7 @@ MDScreen:
         size_hint: 0.075, 0.07
         icon_size_hint: "80sp"
         padding: 5
-        on_press: root.current = "profile.kv"
+        on_release: app.root.current = 'PersonScreen'
 
     MDRectangleFlatButton:
         text: "Help"
@@ -28,6 +38,7 @@ MDScreen:
         md_bg_color:[1,0,0,1]
         pos_hint : {'center_x': 0.1, 'center_y': 0.95}
         size_hint: 0.05, 0.015
+        on_press: app.call()
 
     MDLabel:
         text: "Bienvenido persona"
@@ -47,6 +58,7 @@ MDScreen:
         on_press : app.callback()
         size_hint: 0.25, 0.22
         icon_size: "120sp"
+        border: 0,0,0,0
 
     MDLabel:
         text: "Presione aqui y habla"
@@ -55,11 +67,7 @@ MDScreen:
         pos_hint : {'center_y': 0.55}
         halign: 'center'
         font_family: 'khmer'
-
-
-
-#CAMPOS
-
+        
     MDTextField:
         id: data
         hint_text: "¿Que desea buscar?"
@@ -97,15 +105,8 @@ MDScreen:
         color_mode: 'accent'
         mode: "rectangle"
         pos_hint : {'center_x': 0.75, 'center_y': 0.2}
-        size_hint: 0.5, 0.1
+        size_hint: 0.4, 0.1
         max_text_length:
-
-
-
-
-
-#BOTONES
-
 
 
     MDRectangleFlatButton:
@@ -114,7 +115,16 @@ MDScreen:
         md_bg_color:[0,1,1,1]
         line_color: "black"
         on_press: app.send_people()
-        pos_hint : {'center_x': 0.5}
+        pos_hint : {'center_x': 0.5, 'center_y': 0.05}
 
+
+
+
+<PersonScreen>
+    MDRectangleFlatButton:
+        text: 'Prueba'
+        font_size: 30
+        pos_hint : {'center_x': 0.2, 'center_y': 0.05}
+        on_release: app.root.current = 'MDScreen'
 
 
