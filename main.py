@@ -5,6 +5,7 @@ from kivy.uix.widget import Widget
 from kivymd.app import MDApp
 from kivymd.uix.screen import Screen
 from kivy.lang import Builder
+from kivy.uix.screenmanager import ScreenManager, Screen, FadeTransition
 # ============================================================================== Librerias
 from pyautogui import sleep
 import speech_recognition as sr
@@ -14,7 +15,10 @@ from time import sleep
 # ============================================================================== Archivos
 import function as f
 
-
+class MDScreen(Screen):
+    pass
+class PersonScreen(Screen):
+    pass
 class NanaApp(MDApp):
 
     def build(self):
