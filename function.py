@@ -5,7 +5,7 @@ from kivymd.app import MDApp
 from kivymd.uix.screen import MDScreen
 from kivy.lang import Builder
 #from kivy.garden.notification import Notification
-from googlesearch import search
+#from googlesearch import search
 import webbrowser
 
 import pyautogui as pg
