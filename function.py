@@ -5,7 +5,7 @@ from kivymd.app import MDApp
 from kivymd.uix.screen import MDScreen
 from kivy.lang import Builder
 #from kivy.garden.notification import Notification
-#from googlesearch import search
+from googlesearch import search
 import webbrowser
 
 import pyautogui as pg
@@ -15,11 +15,11 @@ import pywhatkit
 import random
 import requests
 import json
-from time import sleep
 from datetime import datetime as dt
 
 with open('data_talk.json', 'r') as file:
     data = json.load(file)
+
 
 salud = [
     "Segun mi informacion debo recordarte",
@@ -100,7 +100,6 @@ def run_nana(order):
 
     elif  "diabetes" in order: #["diabetes", "diabetico", "diabetica", "diabete"]
         talk(f"{salud[0]}{salud[1]}{salud[3]} y {salud[7]}")
-
     elif "clima" in order.lower() or "tiempo" in order.lower():
         dat = ""
         if "en " in order:
@@ -108,11 +107,6 @@ def run_nana(order):
         else:
             dat = "Caracas"
         weather(data["weathers"]["urls"]["weather"], data["weathers"]["urls"]["location"], dat, data["weathers"]["key"])
-    
-    elif "repetir" in order.lower() or "repite" in order.lower():
-        repeat(order.replace("repetir", "").replace("repite", ""))
-    elif "cuentame" in order.lower() or "quien soy" in order.lower():
-        tell(order)
     else:
         talk("De " + order + " " + data["result"][random.randint(0, len(data["result"])-1)])
         lista = search(order)
@@ -150,36 +144,15 @@ def send_nana(json,persona, mensaje):
             pywhatkit.sendwhatmsg_instantly(v, mensaje, 30, True, 22)
             pg.press("enter")
 
-def repeat(frase):
-    if frase != "":
-        sleep(2)
-        talk(frase)
-    else:
-        talk(data["error"][0][random.randint(0, len(data["error"][0]))], ", ",data["error"][1][random.randint(0, len(data["error"][1]))])
-
-def help():
-    pass
-
 # PROXIMAMENTE
+def repeat():
+    pass
 
 def hello():
     pass
 
-def tell(x):
-    if "quien soy":
-        now = dt.now()
-        y,z,w = (int(str(data["perfil"]["cumpleaos"][0:1]))), (int(str(data["perfil"]["cumpleaos"][3:4]))), ((now.year) - int(str(data["perfil"]["cumpleaos"][6:10])))
-        if now.day >= y and now.month >= z:
-            w += 1
-        talk("Tu eres: "+ data["perfil"]["Nombre"]+" "+ data["perfil"]["Apellido"]+ ". Naciste el: "+ data["perfil"]["cumpleaos"]+ ", por lo que tienes: " + f"{w-1} años")
-    elif "chiste" in x:
-        talk(data["tell_phrase"]["comedy"][random.randint(0, len(data["tell_phrase"]["comedy"]))])
-
-def notify_fech():
-    now = dt.now()
-    if data["perfil"]["cumpleaos"] == f"{now.day}-{now.month}-{now.year}":
-        x,y = ((now.year) - data["perfil"]["cumpleaos"][6:10]), data["perfil"]["Nombre"]
-        talk(f"FELICIDADES {y} , HOY ES TU CUMPLEAÑOS NUMERO {x}")# AÑADIR tambien como RECORDATORIO
+def chiste():
+    pass
 
 def dayword(): # http://palabras-aleatorias-public-api.herokuapp.com/
     pass
@@ -187,8 +160,11 @@ def dayword(): # http://palabras-aleatorias-public-api.herokuapp.com/
 def amen(): # https://es.aleteia.org/2019/12/04/el-ano-liturgico-y-sus-3-ciclos-como-saber-si-es-a-b-o-c/
     pass    # https://scripture.api.bible/
 
+def help():
+    pass
+
 def traduct(): # https://www.ibidemgroup.com/edu/traduccion-automatica-texto-python/
-    pass 
+    pass
 def conf():
     pass
 #https://programandofacilsite.wordpress.com/2017/04/23/como-hacer-llamadas-telefonicas-en-python/

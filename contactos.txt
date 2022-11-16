@@ -1,0 +1,1159 @@
+Name:ROAM
+PhoneNumber:7626
+
+Name:Aaaa
+PhoneNumber:
+
+Name:Aaron Ronquete
+PhoneNumber:+584126247585
+
+Name:Aaron Ronquete
+PhoneNumber:+584126247585
+
+Name:Abelardo Cha
+PhoneNumber:+584149077565
+
+Name:Abelardo Cha
+PhoneNumber:+584149077565
+
+Name:Abraham Casti
+PhoneNumber:+584149272614
+
+Name:Abraham Casti
+PhoneNumber:+584149272614
+
+Name:Abril la más linda
+PhoneNumber:0424-9428556
+04249428556
+
+Name:Adan G. C
+PhoneNumber:+584142818510
+
+Name:Adan G. C
+PhoneNumber:+584142818510
+
+Name:Adriana Traduct
+PhoneNumber:04241657772
+
+Name:Adriana Traduct
+PhoneNumber:04241657772
+
+Name:Aida Cardenas
+PhoneNumber:
+
+Name:Ale Marcano
+PhoneNumber:+34632524305
+
+Name:Ale Marcano
+PhoneNumber:+34632524305
+
+Name:Ale Sanchez
+PhoneNumber:04142217831
+
+Name:Ale Sanchez
+PhoneNumber:04142217831
+
+Name:Alejandro Casares
+PhoneNumber:0412-3014987
+04123014987
+
+Name:Alejandro Cuervo
+PhoneNumber:
+
+Name:Alejandro Ghysbetch
+PhoneNumber:+58 412-9725444
++584129725444
+
+Name:Alejandro Guz
+PhoneNumber:+584127253667
+
+Name:Alejandro Guz
+PhoneNumber:+584127253667
+
+Name:Alejandro Villarino
+PhoneNumber:+58 412-0653151
++584120653151
+
+Name:Alessandra Mazzaglia
+PhoneNumber:+58 414-2102929
++584142102929
+
+Name:Alexander Balza
+PhoneNumber:04241384192
+
+Name:Alexander Balza
+PhoneNumber:04241384192
+
+Name:Algelimar
+PhoneNumber:
+
+Name:Ana Marin
+PhoneNumber:+58 424-8639212
++584248639212
+
+Name:Ana Tovar
+PhoneNumber:+584241738180
+
+Name:Ana Tovar
+PhoneNumber:+584241738180
+
+Name:Andre Scarcia
+PhoneNumber:+58 414-3119766
++584143119766
+
+Name:Andrea De Oliveira
+PhoneNumber:
+
+Name:Andrea Molina
+PhoneNumber:
+
+Name:Andrea Vargas
+PhoneNumber:
+
+Name:Andrea Villarroel
+PhoneNumber:+58 426-5190606
++584265190606
+
+Name:Andres Hernández
+PhoneNumber:
+
+Name:Andres Yepez
+PhoneNumber:+584242067537
+
+Name:Andres Yepez
+PhoneNumber:+584242067537
+
+Name:Andrés Orga
+PhoneNumber:+584128410707
+
+Name:Andrés Orga
+PhoneNumber:+584128410707
+
+Name:Andrés Rojas
+PhoneNumber:+58 412-3270225
++584123270225
+
+Name:Andy
+PhoneNumber:+58 424-1203910
++584241203910
+
+Name:Angela Nuñez
+PhoneNumber:+58 412-3008306
++584123008306
+
+Name:Angella
+PhoneNumber:
+
+Name:Angélica Oberto
+PhoneNumber:+58 412-0999401
++584120999401
+
+Name:Anna Villamizar
+PhoneNumber:+58 412-9045620
++584129045620
+
+Name:Anthony Nava
+PhoneNumber:
+
+Name:Antonio Posa
+PhoneNumber:+584242050402
+
+Name:Antonio Posa
+PhoneNumber:+584242050402
+
+Name:Aquiles Rojas
+PhoneNumber:+584242321616
+
+Name:Aquiles Rojas
+PhoneNumber:+584242321616
+
+Name:Argelia Olivo
+PhoneNumber:+584142040918
+
+Name:Argelia Olivo
+PhoneNumber:+584142040918
+
+Name:Ariadna
+PhoneNumber:+584242237270
+
+Name:Ariadna
+PhoneNumber:+584242237270
+
+Name:Armando Moreno
+PhoneNumber:+584242883532
+
+Name:Armando Moreno
+PhoneNumber:+584242883532
+
+Name:Arteaga
+PhoneNumber:
+
+Name:Ashley Ramos
+PhoneNumber:
+
+Name:At. Cliente
+PhoneNumber:+582122001523
+
+Name:AtencionCliente
+PhoneNumber:121
+
+Name:Augusto Zambrano
+PhoneNumber:+58 414-3430384
++584143430384
+
+Name:Benitos
+PhoneNumber:0414-9056789
+04149056789
+
+Name:Borrar
+PhoneNumber:
+
+Name:Borrar
+PhoneNumber:
+
+Name:Borrar
+PhoneNumber:
+
+Name:Branyeli
+PhoneNumber:
+
+Name:Brayan Prepa
+PhoneNumber:+584143207410
+
+Name:Brayan Prepa
+PhoneNumber:+584143207410
+
+Name:Bro BB
+PhoneNumber:04242363564
+
+Name:Bro BB
+PhoneNumber:04242363564
+
+Name:Bruno Togni
+PhoneNumber:+58 412-5527291
++584125527291
+
+Name:Buzon de Voz
+PhoneNumber:*2
+
+Name:Buzon de Voz
+PhoneNumber:133
+
+Name:Buzon de voz412
+PhoneNumber:124
+
+Name:Buzon Roaming
+PhoneNumber:+584148352691
+
+Name:Camila Garcia
+PhoneNumber:+584241818540
+
+Name:Camila Garcia
+PhoneNumber:+584241818540
+
+Name:Camisas
+PhoneNumber:
+
+Name:Carlos De Castro
+PhoneNumber:
+
+Name:Carlos Faria
+PhoneNumber:+58 414-1035741
++584141035741
+
+Name:Carlos Figuera
+PhoneNumber:+58 414-3986010
++584143986010
+
+Name:Carlos González
+PhoneNumber:+58 412-9936162
++584129936162
+
+Name:Carlos Jara
+PhoneNumber:
+
+Name:Carlos Leon
+PhoneNumber:+584244733159
+
+Name:Carlos Leon
+PhoneNumber:+584244733159
+
+Name:Carlos Morales
+PhoneNumber:+584127395580
+
+Name:Carlos Morales
+PhoneNumber:+584127395580
+
+Name:Carlos Nakouz
+PhoneNumber:+58 424-1569245
++584241569245
+
+Name:Carlos Pirela
+PhoneNumber:
+
+Name:Carlos Roa
+PhoneNumber:+584242332941
+
+Name:Carlos Roa
+PhoneNumber:+584242332941
+
+Name:Carmelo V- Int
+PhoneNumber:+5491137944553
+
+Name:Carmelo V- Int
+PhoneNumber:+5491137944553
+
+Name:Catato
+PhoneNumber:+58 414-1181358
++584141181358
+
+Name:catato2
+PhoneNumber:04143328115
+
+Name:catato2
+PhoneNumber:04143328115
+
+Name:Cesar Febres
+PhoneNumber:+58 424-1717891
++584241717891
+
+Name:Cesar Febres
+PhoneNumber:+58 424-1717891
+
+Name:Chama Bonita
+PhoneNumber:
+
+Name:Chama Bonita 2
+PhoneNumber:
+
+Name:Chat de Voz
+PhoneNumber:*2428
+
+Name:Christian Berenh
+PhoneNumber:+58 424-2927423
++584242927423
+
+Name:Christian Vargas
+PhoneNumber:+58 424-2567663
++584242567663
+
+Name:Chrystian Loayza
+PhoneNumber:+58 424-1821076
++584241821076
+
+Name:Cliente Datos
+PhoneNumber:411
+
+Name:Club Digitel
+PhoneNumber:2582
+
+Name:Club Movistar
+PhoneNumber:*2582
+
+Name:Consulta saldo
+PhoneNumber:123
+
+Name:Cristina Hurtado
+PhoneNumber:+58 414-3137185
++584143137185
+
+Name:Cura
+PhoneNumber:0212-2374239
+
+Name:César E. Pérez González
+PhoneNumber:+58 414-2859195
++584142859195
+
+Name:César Valdés
+PhoneNumber:
+
+Name:Daniel Pop
+PhoneNumber:0416-3289827
+04163289827
+
+Name:Daniel Pop
+PhoneNumber:04163289827
+
+Name:Daniela Opti
+PhoneNumber:
+
+Name:Darianna Montaño
+PhoneNumber:
+
+Name:Davanit
+PhoneNumber:+584129524091
+
+Name:Davanit
+PhoneNumber:+584129524091
+
+Name:Dayleen Martínez
+PhoneNumber:+58 424-1285854
++584241285854
+
+Name:Diana Caldera
+PhoneNumber:+584242350743
+
+Name:Diana Caldera
+PhoneNumber:+584242350743
+
+Name:Diana Novia
+PhoneNumber:+584147832823
+
+Name:Diana Novia
+PhoneNumber:+584147832823
+
+Name:Diego Lspez
+PhoneNumber:+584241447695
+
+Name:Diego Lspez
+PhoneNumber:+584241447695
+
+Name:Diego Martin
+PhoneNumber:+58 412-9969566
++584129969566
+
+Name:Diego Molina
+PhoneNumber:
+
+Name:Diego Mumoz
+PhoneNumber:+58 424-1400733
++584241400733
+
+Name:Diego Pestana
+PhoneNumber:+584129702560
+
+Name:Diego Pestana
+PhoneNumber:+584129702560
+
+Name:Diego Rodriguez
+PhoneNumber:+584242247643
+
+Name:Diego Rodriguez
+PhoneNumber:+584242247643
+
+Name:Diglenis
+PhoneNumber:
+
+Name:Dilo
+PhoneNumber:*3456
+
+Name:Dulces
+PhoneNumber:04140275167
+
+Name:Dulces
+PhoneNumber:04140275167
+
+Name:Edu Salazar
+PhoneNumber:04142578957
+
+Name:Edu Salazar
+PhoneNumber:04142578957
+
+Name:Eduardo Pignataro
+PhoneNumber:+58 424-2245500
++584242245500
+
+Name:Eduardo Tovar
+PhoneNumber:
+
+Name:Elias Korban
+PhoneNumber:04242344620
+
+Name:Elias Korban
+PhoneNumber:04242344620
+
+Name:Elizabeth Lander
+PhoneNumber:+58 412-2989897
++584122989897
+
+Name:Eloy Ramirez
+PhoneNumber:+58 424-1371797
++584241371797
+
+Name:Emergencia
+PhoneNumber:911
+
+Name:Emidio Cocci
+PhoneNumber:+58 424-2711740
++584242711740
+
+Name:Emilio Profe
+PhoneNumber:
+
+Name:Entretonos
+PhoneNumber:*86667
+
+Name:Fabrizio Battistella
+PhoneNumber:+58 424-1496207
++584241496207
+
+Name:Fer Díaz
+PhoneNumber:
+
+Name:Fernando Ba
+PhoneNumber:
+
+Name:Fernando Mar
+PhoneNumber:04241056764
+
+Name:Fernando Mar
+PhoneNumber:04241056764
+
+Name:Francesca Marinuzzi
+PhoneNumber:
+
+Name:Francisco Bigott
+PhoneNumber:+58 424-2007116
++584242007116
+
+Name:Frank
+PhoneNumber:
+
+Name:Fritz Wagner
+PhoneNumber:+584129225550
+
+Name:Fritz Wagner
+PhoneNumber:+584129225550
+
+Name:Fulvio
+PhoneNumber:+58 414-2028698
++584142028698
+
+Name:Gabriel Gessen
+PhoneNumber:+584242339910
++584242339910
+
+Name:Gabriel Gessen
+PhoneNumber:+584242339910
+
+Name:Gabriel Prepa
+PhoneNumber:+584142697222
+
+Name:Gabriel Prepa
+PhoneNumber:+584142697222
+
+Name:Gabriel Viñas
+PhoneNumber:+58 412-3807645
++584123807645
+
+Name:Gabriela Curiel
+PhoneNumber:+584145578756
+
+Name:Gabriela Curiel
+PhoneNumber:+584145578756
+
+Name:Gabriela Guerrero
+PhoneNumber:
+
+Name:Gabriela Silva
+PhoneNumber:
+
+Name:gabriella suárez
+PhoneNumber:+58 412-6374897
++584126374897
+
+Name:Galaxia Store
+PhoneNumber:
+
+Name:Gebrayel Inatti
+PhoneNumber:+58 412-9861699
++584129861699
+
+Name:Genesis Recine
+PhoneNumber:+584149028916
+
+Name:Genesis Recine
+PhoneNumber:+584149028916
+
+Name:Gilberto Pucciarelli
+PhoneNumber:
+
+Name:Giuliana Rodríguez
+PhoneNumber:
+
+Name:Giulinna
+PhoneNumber:
+
+Name:Gladys Tía
+PhoneNumber:
+
+Name:Gloria Patricia
+PhoneNumber:
+
+Name:Gonzalo Azpurua
+PhoneNumber:04142242369
+
+Name:Gonzalo Azpurua
+PhoneNumber:04142242369
+
+Name:Guillermo
+PhoneNumber:
+
+Name:Génesis Cordero
+PhoneNumber:+584247178777
+
+Name:Génesis Cordero
+PhoneNumber:+584247178777
+
+Name:Herma
+PhoneNumber:
+
+Name:Hilda Acacio
+PhoneNumber:
+
+Name:Héctor Mon
+PhoneNumber:+584142776161
+
+Name:Héctor Mon
+PhoneNumber:+584142776161
+
+Name:Ignacio Lemmo
+PhoneNumber:
+
+Name:Ignacio Prozel
+PhoneNumber:+584241643018
+
+Name:Ignacio Prozel
+PhoneNumber:+584241643018
+
+Name:Ignacio Valle
+PhoneNumber:+58 412-3113898
++584123113898
+
+Name:Isa Reyes
+PhoneNumber:
+
+Name:Isabel Asenjo
+PhoneNumber:+58 412-0229774
++584120229774
+
+Name:Isabela Damas
+PhoneNumber:
+
+Name:Isabela Espinoza
+PhoneNumber:+58 412-2862177
++584122862177
+
+Name:Isabella
+PhoneNumber:+584241248064
+
+Name:Isabella
+PhoneNumber:+584241248064
+
+Name:Ivan Ortiz
+PhoneNumber:
+
+Name:Jahnny Mora
+PhoneNumber:+58 414-9035351
++584149035351
+
+Name:Jarimira Le
+PhoneNumber:+584120242911
+
+Name:Jarimira Le
+PhoneNumber:+584120242911
+
+Name:Javier Texeira
+PhoneNumber:+58 424-3238366
++584243238366
+
+Name:Jeanderly Castro
+PhoneNumber:0412-9858693
+04129858693
+
+Name:Jhonder
+PhoneNumber:
+
+Name:Joaquín Aborno
+PhoneNumber:
+
+Name:John Smallpage
+PhoneNumber:+58 424-1367581
++584241367581
+
+Name:Jose Almonte
+PhoneNumber:
+
+Name:Jose Hidalgo
+PhoneNumber:+58 414-3119649
++584143119649
+
+Name:Joseff Arabe
+PhoneNumber:+584241506940
+
+Name:Joseff Arabe
+PhoneNumber:+584241506940
+
+Name:José Almonte
+PhoneNumber:
+
+Name:José Almonte
+PhoneNumber:+584241622223
+
+Name:José Almonte
+PhoneNumber:+584241622223
+
+Name:José Cisneros
+PhoneNumber:+584129624380
+
+Name:José Cisneros
+PhoneNumber:+584129624380
+
+Name:José Ponente
+PhoneNumber:04126766709
+
+Name:José Ponente
+PhoneNumber:04126766709
+
+Name:Juan
+PhoneNumber:+584241518105
+
+Name:Juan
+PhoneNumber:+584241518105
+
+Name:Juan Isturiz
+PhoneNumber:+584127188599
+
+Name:Juan Isturiz
+PhoneNumber:+584127188599
+
+Name:Judith Secret
+PhoneNumber:+582122403574
++582122128668
+
+Name:Julieta Chacin
+PhoneNumber:+584242537528
+
+Name:Julieta Chacin
+PhoneNumber:+584242537528
+
+Name:Kevin Hernández
+PhoneNumber:
+
+Name:Kevin Lugo
+PhoneNumber:+58 412-8019758
++584128019758
+
+Name:Kirito
+PhoneNumber:+584144662014
+
+Name:Kirito
+PhoneNumber:+584144662014
+
+Name:Ladillado
+PhoneNumber:+58 412-0702716
++584120702716
+
+Name:Laura De Jongh
+PhoneNumber:+58 414-1029622
++584141029622
+
+Name:Laura Fava
+PhoneNumber:
+
+Name:Laura Vidal
+PhoneNumber:+584242040818
+
+Name:Laura Vidal
+PhoneNumber:+584242040818
+
+Name:Lela
+PhoneNumber:+584242117954
+
+Name:Lela
+PhoneNumber:+584242117954
+
+Name:Leonardo perez
+PhoneNumber:
+
+Name:Liliana Vaudo
+PhoneNumber:
+
+Name:Lino Marino
+PhoneNumber:+584241859385
+
+Name:Lino Marino
+PhoneNumber:+584241859385
+
+Name:Llamada Cobrar
+PhoneNumber:*44
+
+Name:Luciano Salvetti
+PhoneNumber:
+
+Name:Luciano Salvetti
+PhoneNumber:
+
+Name:Luis Colmenares
+PhoneNumber:
+
+Name:Luis Stanislao
+PhoneNumber:+584142000093
+
+Name:Luis Stanislao
+PhoneNumber:+584142000093
+
+Name:Luisa Colombani
+PhoneNumber:+58 424-2733109
++584242733109
+
+Name:Mafer CECA
+PhoneNumber:+584125032417
+
+Name:Mafer CECA
+PhoneNumber:+584125032417
+
+Name:Mafer Fuenmayor
+PhoneNumber:+58 424-6697344
++584246697344
+
+Name:Mafer Morillo
+PhoneNumber:+58 412-0257781
++584120257781
+
+Name:Maite Calles
+PhoneNumber:+584143774136
+
+Name:Maite Calles
+PhoneNumber:+584143774136
+
+Name:Mama
+PhoneNumber:0412-5539375
+04125539375
+
+Name:Mamá De Cristian
+PhoneNumber:
+
+Name:Manuel Neneses
+PhoneNumber:
+
+Name:Manuel Ramírez
+PhoneNumber:
+
+Name:Manuel Zerpa
+PhoneNumber:0414-1343258
+04141343258
+
+Name:Maria Daniela Cuervo
+PhoneNumber:
+
+Name:Mariana Meza
+PhoneNumber:
+
+Name:Mariangel Duque
+PhoneNumber:+58 412-6251345
++584126251345
+
+Name:Marianna Melendez
+PhoneNumber:+58 414-8724257
++584148724257
+
+Name:Mariano Moran
+PhoneNumber:+58 426-5108131
++584265108131
+
+Name:Mariem Velazco
+PhoneNumber:0414-8450735
+04148450735
+
+Name:Marilau
+PhoneNumber:0414-9233595
+04149233595
+
+Name:Marivi
+PhoneNumber:+584241763045
+
+Name:Marivi
+PhoneNumber:+584241763045
+
+Name:Martin O
+PhoneNumber:
+
+Name:María Fernanda
+PhoneNumber:
+
+Name:María Urquiola
+PhoneNumber:
+
+Name:María Valentina
+PhoneNumber:
+
+Name:Mavi Gasparrini
+PhoneNumber:
+
+Name:Melanie S
+PhoneNumber:+58 412-0499171
++584120499171
+
+Name:Miguel Aten
+PhoneNumber:04241774720
+
+Name:Miguel Aten
+PhoneNumber:04241774720
+
+Name:Miguel Salas
+PhoneNumber:+58 424-1946531
++584241946531
+
+Name:Miguelangel Somana
+PhoneNumber:+58 412-9216461
++584129216461
+
+Name:Miriam
+PhoneNumber:
+
+Name:Mybro
+PhoneNumber:+58 412-5619854
++584125619854
+
+Name:N
+PhoneNumber:
+
+Name:Naim Nasal
+PhoneNumber:
+
+Name:Napo futura moglie
+PhoneNumber:+58 414-1279484
++584141279484
+
+Name:Napo
+PhoneNumber:
+
+Name:Nath Camero
+PhoneNumber:+58 426-4037687
++584264037687
+
+Name:Nicolas Araque
+PhoneNumber:
+
+Name:Nicolas Lea
+PhoneNumber:+584241743990
+
+Name:Nicolas Lea
+PhoneNumber:+584241743990
+
+Name:Nicole Hermana
+PhoneNumber:
+
+Name:Nicole Villegas
+PhoneNumber:+58 424-1624272
++584241624272
+
+Name:Nicolle Giraud
+PhoneNumber:+584140394492
+
+Name:Nicolle Giraud
+PhoneNumber:+584140394492
+
+Name:Nicolás Briceño
+PhoneNumber:+58 412-2267037
++584122267037
+
+Name:Oriana
+PhoneNumber:04140307534
+
+Name:Oriana
+PhoneNumber:04140307534
+
+Name:Oriana Alves
+PhoneNumber:
+
+Name:Oriana Calderon
+PhoneNumber:+58 414-2905558
++584142905558
+
+Name:Pedro Moreno
+PhoneNumber:
+
+Name:Pedro Urea
+PhoneNumber:+58 424-1766617
++584241766617
+
+Name:Peluqueria
+PhoneNumber:0412-5934052
+04125934052
+
+Name:Pilar
+PhoneNumber:+58 414-3241851
++584143241851
+
+Name:Pinky
+PhoneNumber:
+
+Name:Policia
+PhoneNumber:171
+
+Name:Rach
+PhoneNumber:+584123690003
+
+Name:Rach
+PhoneNumber:+584123690003
+
+Name:Rafael Davila
+PhoneNumber:+58 412-3252221
++584123252221
+
+Name:Raiza Colegio
+PhoneNumber:
+
+Name:Rene Chsfer
+PhoneNumber:+584241217320
+
+Name:Rene Chsfer
+PhoneNumber:+584241217320
+
+Name:Ricardo Pulido
+PhoneNumber:
+
+Name:Richard Ceel
+PhoneNumber:+584143398634
+
+Name:Richard Ceel
+PhoneNumber:+584143398634
+
+Name:Roberto Arango
+PhoneNumber:+58 414-2783725
++584142783725
+
+Name:Roberto Marazza
+PhoneNumber:+584141265036
+
+Name:Roberto Marazza
+PhoneNumber:+584141265036
+
+Name:Romel Clavel
+PhoneNumber:+584123218933
+
+Name:Romel Clavel
+PhoneNumber:+584123218933
+
+Name:Rommel Sanzonetti
+PhoneNumber:+58 424-1280645
++584241280645
+
+Name:Román
+PhoneNumber:+58 424-1531999
++584241531999
+
+Name:Ronny Estampado
+PhoneNumber:
+
+Name:Roy Rodríguez
+PhoneNumber:+58 412-5538939
++584125538939
+
+Name:Rubén Díaz
+PhoneNumber:
+
+Name:Sabrina Correia
+PhoneNumber:+58 412-2409188
++584122409188
+
+Name:Saldo
+PhoneNumber:*88
+
+Name:Samancito
+PhoneNumber:+58 424-2192627
++584242192627
+
+Name:Samuel Boada
+PhoneNumber:
+
+Name:Samuel Morales
+PhoneNumber:
+
+Name:Santiago Camaran
+PhoneNumber:+58 412-4625902
++584124625902
+
+Name:Santiago Gonzalez
+PhoneNumber:+58 412-9328197
++584129328197
+
+Name:Santiago Maldonado
+PhoneNumber:
+
+Name:Sergio Suarez
+PhoneNumber:+58 424-2929636
++584242929636
+
+Name:Servicio 113
+PhoneNumber:113
+
+Name:Siro Tagliaferro Isturíz
+PhoneNumber:+58 424-2396940
++584242396940
+
+Name:Stefani Perez
+PhoneNumber:
+
+Name:Stefani Perez
+PhoneNumber:+584169104139
+
+Name:Stefani Perez
+PhoneNumber:+584242264926
+
+Name:Stefani Perez
+PhoneNumber:+584242264926
+
+Name:Stefani Perez
+PhoneNumber:+584169104139
+
+Name:Stephanie Pires
+PhoneNumber:+58 424-2824448
++584242824448
+
+Name:Stephany López
+PhoneNumber:
+
+Name:Telpago
+PhoneNumber:132
+
+Name:Transferencia
+PhoneNumber:7878
+
+Name:Ulises Ferm
+PhoneNumber:+584241787040
+
+Name:Ulises Ferm
+PhoneNumber:+584241787040
+
+Name:Urbina
+PhoneNumber:
+
+Name:Valeria Arias
+PhoneNumber:+58 414-1152405
++584141152405
+
+Name:Valu
+PhoneNumber:
+
+Name:Vanessa Brizuela
+PhoneNumber:
+
+Name:Vicente López
+PhoneNumber:+58 416-6216271
++584166216271
+
+Name:Victor Llanos
+PhoneNumber:+58 424-1301665
++584241301665
+
+Name:Victoria Hamana
+PhoneNumber:
+
+Name:Victoria Pérez
+PhoneNumber:
+
+Name:Ya Lo Borrare
+PhoneNumber:
+
+Name:Yasmin
+PhoneNumber:+584121944161
+
+Name:Yasmin
+PhoneNumber:+584121944161
+
+Name:Zulu
+PhoneNumber:+58 424-1340471
++584241340471
