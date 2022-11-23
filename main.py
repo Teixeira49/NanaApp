@@ -1,43 +1,33 @@
-# ============================================================================== INTERFAZ
+# =========================================================================================================
 from turtle import width
 from kivy.app import App
 from kivy.uix.widget import Widget
 from kivymd.app import MDApp
 from kivymd.uix.screen import Screen
 from kivy.lang import Builder
-#from kivy.properties import ObjectProperty
 from kivy.uix.screenmanager import ScreenManager, Screen, FadeTransition
-# ============================================================================== Base de datos
-import psycopg2
-import os
-# ============================================================================== Librerias
-from pyautogui import sleep
-from kivy.garden.notification import Notification
-import speech_recognition as sr
-import pyttsx3
-import pywhatkit
-from time import sleep
-import random
-# ============================================================================== Archivos
+# ============================================================================== Librerias Kivy ===========
 import function as f
-import time
-#import serial
-import webbrowser
 import json
-
+import random
+import webbrowser
+from tkinter import *
+#from tkcalendar import Calendar 
+# ============================================================================== Archivos =================
+#  >> Carga de archivos:
+# ---------------------------------------------------------------------------------------------------------
 with open('data_talk.json', 'r') as file:
     data = json.load(file)
-
+# ---------------------------------------------------------------------------------------------------------
+#  >> Paneles
+# ---------------------------------------------------------------------------------------------------------
 class MDScreen(Screen):
     pass
 class PersonScreen(Screen):
-        #    def on_checkbox_active(self, checkbox, value):
-        # if value == True:
-        #
-        #    print("y")
-        # else:
-        #
-        #    print("x")
+    pass
+class CalendarScreen(Screen):
+    pass
+class SmsScreen(Screen):
     pass
 class NanaApp(MDApp):
 
@@ -56,22 +46,52 @@ class NanaApp(MDApp):
         f.talk(data["query"][random.randint(0, len(data["query"]) - 1)])
         f.run_nana(order)
 
+    def profile(self):
+        webbrowser.open_new_tab(
+            'https://www.google.com/search?q=como+crear+perfil&client=opera-gx&sxsrf=ALiCzsbEvkZRB-XStGjrA7B8OmgWvB8rdg%3A1667780750279&ei=jlBoY97aEJyZwbkPuKOL-Ac&ved=0ahUKEwje2bu555r7AhWcTDABHbjRAn8Q4dUDCA4&uact=5&oq=como+crear+perfil&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQ6CggAEEcQ1gQQsAM6BwgAELADEEM6DQgAEOQCENYEELADGAE6BAgjECc6CggAEIAEEIcCEBQ6CAgAELEDEIMBOgUIABCxAzoLCAAQgAQQsQMQgwE6CAgAEIAEELEDOggIABCABBDJA0oECE0YAUoECEEYAEoECEYYAVCCzgNYnuwDYLPuA2gCcAF4AoABvgWIAY0gkgENMi44LjIuMy4wLjEuMZgBAKABAcgBEcABAdoBBggBEAEYCQ&sclient=gws-wiz-serp')
+
+    def call(self):
+        webbrowser.open_new_tab(
+            'https://www.google.com/search?q=como+llamar&client=opera-gx&sxsrf=ALiCzsbpqNiZ73J-mRKVXwcrIKb2JxxmEw%3A1667780733762&ei=fVBoY7qXLsyGwbkPn-CfyAI&ved=0ahUKEwj6ycux55r7AhVMQzABHR_wBykQ4dUDCA4&uact=5&oq=como+llamar&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIKCAAQgAQQhwIQFDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDoHCCMQ6gIQJzoECCMQJzoKCC4QxwEQ0QMQQzoICAAQgAQQsQM6CwgAEIAEELEDEIMBOg4ILhCABBCxAxDHARDRAzoRCC4QgAQQsQMQgwEQxwEQ0QM6DQguEMcBENEDENQCEEM6BwgAEIAEEAM6CAgAELEDEIMBOgQIABBDOgsIABCABBCxAxDJAzoLCC4QgAQQsQMQgwE6CAguEIAEENQCSgQITRgBSgQIQRgASgQIRhgAUABY3g5g5RJoAXABeACAAe8BiAGmDZIBBTAuOC4zmAEAoAEBsAEKwAEB&sclient=gws-wiz-serp')
+
+    
+    def agendar(self):
+        root = Tk() 
+        root.geometry("400x400")  
+        cal = Calendar(root, selectmode = 'day', year = 2022, month = 11, day = 24)   
+        cal.pack(pady = 20) 
+        
+        def grad_date(): 
+            date.config(text = "Selected Date is: " + cal.get_date()) 
+            var = cal.get_date()
+            with open("fecha.txt", "a") as file:
+                file.write(var)
+            root.destroy()
+            
+        
+        Button(root, text = "Elegir fecha", command = grad_date).pack(pady = 20) 
+        
+        date = Label(root, text = "") 
+        date.pack(pady = 20)
+
+        
+        root.mainloop()
+
+
+        with open("fecha.txt", "a") as file:
+                file.write(f" {self.root.get_screen('CalendarScreen').ids.recordatorio.text}")
+                file.write("\n")
+        self.root.get_screen('CalendarScreen').ids.recordatorio.text = ""
+
+
+
+
     def search(self):
         order = self.root.get_screen('MDScreen').ids.data.text
         self.root.get_screen('MDScreen').ids.data.text = ''
-
         f.run_nana(order)
 
-
-
-    def profile(self):
-        webbrowser.open_new_tab('https://www.google.com/search?q=como+crear+perfil&client=opera-gx&sxsrf=ALiCzsbEvkZRB-XStGjrA7B8OmgWvB8rdg%3A1667780750279&ei=jlBoY97aEJyZwbkPuKOL-Ac&ved=0ahUKEwje2bu555r7AhWcTDABHbjRAn8Q4dUDCA4&uact=5&oq=como+crear+perfil&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQ6CggAEEcQ1gQQsAM6BwgAELADEEM6DQgAEOQCENYEELADGAE6BAgjECc6CggAEIAEEIcCEBQ6CAgAELEDEIMBOgUIABCxAzoLCAAQgAQQsQMQgwE6CAgAEIAEELEDOggIABCABBDJA0oECE0YAUoECEEYAEoECEYYAVCCzgNYnuwDYLPuA2gCcAF4AoABvgWIAY0gkgENMi44LjIuMy4wLjEuMZgBAKABAcgBEcABAdoBBggBEAEYCQ&sclient=gws-wiz-serp')
-    def call(self):
-        webbrowser.open_new_tab('https://www.google.com/search?q=como+llamar&client=opera-gx&sxsrf=ALiCzsbpqNiZ73J-mRKVXwcrIKb2JxxmEw%3A1667780733762&ei=fVBoY7qXLsyGwbkPn-CfyAI&ved=0ahUKEwj6ycux55r7AhVMQzABHR_wBykQ4dUDCA4&uact=5&oq=como+llamar&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIKCAAQgAQQhwIQFDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDoHCCMQ6gIQJzoECCMQJzoKCC4QxwEQ0QMQQzoICAAQgAQQsQM6CwgAEIAEELEDEIMBOg4ILhCABBCxAxDHARDRAzoRCC4QgAQQsQMQgwEQxwEQ0QM6DQguEMcBENEDENQCEEM6BwgAEIAEEAM6CAgAELEDEIMBOgQIABBDOgsIABCABBCxAxDJAzoLCC4QgAQQsQMQgwE6CAguEIAEENQCSgQITRgBSgQIQRgASgQIRhgAUABY3g5g5RJoAXABeACAAe8BiAGmDZIBBTAuOC4zmAEAoAEBsAEKwAEB&sclient=gws-wiz-serp')
-
     def send_people(self):
-
-
         with open('contactos.txt', 'r') as g:
             lineas = g.readlines()
             llamar = [l.split() for l in lineas]
@@ -80,17 +100,17 @@ class NanaApp(MDApp):
                 if i == []:
                     llamar.remove([])
             for i in llamar:
-                if len(i[0].split(sep=':')) <2:
+                if len(i[0].split(sep=':')) < 2:
                     llamar.remove(i)
             for i in llamar:
-                if len(i)>1:
+                if len(i) > 1:
                     new = ""
                     new += (i[0].split(sep=':'))[1]
                     cont = 1
                     for j in i:
                         new += " "
                         new += str(i[cont])
-                        cont+=1
+                        cont += 1
                         if j == i[-2]:
                             break
 
@@ -100,7 +120,7 @@ class NanaApp(MDApp):
                     new2 += new
 
                     i[0] = new2
-                    while len(i)>1:
+                    while len(i) > 1:
                         i.pop(-1)
 
             llamar2 = []
@@ -121,7 +141,6 @@ class NanaApp(MDApp):
                 else:
                     llamar2.remove(llamar2[0])
 
-
             lista_nombre2 = []
             for i in lista_nombre:
                 x = i.replace('Name:', "")
@@ -138,103 +157,13 @@ class NanaApp(MDApp):
                 diccionario[lista_nombre2[cont]] = lista_tlf2[cont]
                 cont += 1
 
-        listener = sr.Recognizer()
-        voice_id = "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_ES-MX_SABINA_11.0"
-        nanavoice = pyttsx3.init()
-        nanavoice.setProperty("voice", voice_id)
-        nanavoice.setProperty('rate', 150)
-        nanavoice.say('Hola, soy Nana. ¿Qué puedo hacer por ti?')
-        nanavoice.runAndWait()
 
-        def talk(text):
-            nanavoice.say(text)
-            nanavoice.runAndWait()
-
-        def notify():
-            Notification().open(
-                title="Recordatorio",
-                icon="./Images/logo blanco.png",
-                message="Los granos integrales son preferibles a los productos de harina blanca o pasta para la hipertensión",
-                timeout=5,
-            )
-        def take_command():
-            command = ''
-            try:
-                with sr.Microphone() as source:
-                    print("Escuchando...")
-                    listener.adjust_for_ambient_noise(source)
-                    voice = listener.listen(source)
-                    listener.recognize_google(voice, language="es-VE")
-                    command = listener.recognize_google(voice)
-                    command = command.lower()
-                    print(command)
-            except:
-                pass
-            return command
-
-        def run_nana():
-            order = take_command()
-            notify()
-            if 'reproduce' in order:
-                song = order.replace('reproduce', '')
-                talk('Reproduciendo ' + song)
-                pywhatkit.playonyt(song)
-
-            if 'mensaje' in order:
-                # se debe implementar una opción que deje buscar contactos por nombre, y extraer el número de ahí
-                talk('¿Qué quieres decirle?')
-                mensaje = take_command()
-                # número de angelica como prueba
-                pywhatkit.sendwhatmsg_instantly('+584120999401', mensaje, 11, True, 6)
-
-            if 'busca' in order:
-                busqueda = order.replace('busca', '')
-                pywhatkit.search(busqueda)
-
-        run_nana()
-        print(diccionario)
-
-
-
-
-
-        json = {"wilt":"+584123080460",
-                "angelica":"+584120999401"}
-
-
-
-        persona = self.root.get_screen('MDScreen').ids.people.text
-        mensaje = self.root.get_screen('MDScreen').ids.msg.text
-        f.send_nana(diccionario,persona,mensaje)
-        self.root.get_screen('MDScreen').ids.people.text = ""
-        self.root.get_screen('MDScreen').ids.msg.text = ""
-
+        persona = self.root.get_screen('SmsScreen').ids.people.text
+        mensaje = self.root.get_screen('SmsScreen').ids.msg.text
+        f.send_nana(diccionario, persona, mensaje)
+        self.root.get_screen('SmsScreen').ids.people.text = ""
+        self.root.get_screen('SmsScreen').ids.msg.text = ""
+# ---------------------------------------------------------------------------------------------------------
 if __name__ == "__main__":
-    f.talk(data["welcome"][random.randint(0, len(data["welcome"]) - 1)] + " " + data["Quest"][1][random.randint(0, len(data["Quest"][1]) - 1)] + " " + data["Quest"][2][random.randint(0, len(data["Quest"][2]) - 1)])
-
     NanaApp().run()
-
-
-
-
-
-
-
-
-# DESECHADO DE LA API DEL CLIMA:
-
-# https://home.openweathermap.org/api_keys
-# https://www.youtube.com/watch?v=nksauZe87Nw
-
-#url = "https://open-weather13.p.rapidapi.com/city/landon"
-#https://openweathermap.org/api/geocoding-api
-#https://openweathermap.org/current
-#https://home.openweathermap.org/subscriptions/billing_info/onecall_30/base?key=base&service=onecall_30
-
-#headers = {
-#	"X-RapidAPI-Key": "6041c295d0msh6fde4576d1068d6p175d6ejsnab02cc5a2ef5",
-#	"X-RapidAPI-Host": "open-weather13.p.rapidapi.com"
-#}
-
-    #response = requests.request("GET", url, headers=headers)
-    #print(response.text)
+# ---------------------------------------------------------------------------------------------------------
