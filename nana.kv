@@ -71,17 +71,16 @@ ScreenManager:
 # --------------------------------------------------------------------------------------------
     MDTextField:
         id: data
-        hint_text: "¿Que desea buscar?"
+        hint_text: "¿Qué desea buscar?"
         helper_text_mode: "on_focus"
         color_mode: 'accent'
         mode: "rectangle"
         pos_hint : {'center_x': 0.4, 'center_y': 0.45}
         max_text_length: 20
         size_hint: 0.6, 0.1
-        icon_right: "android"
 # --------------------------------------------------------------------------------------------
     MDFloatingActionButton:
-        icon: "search"
+        icon: "magnify"
         line_color: "green"
         on_press: app.search()
         pos_hint : {'center_x': 0.8, 'center_y': 0.45}

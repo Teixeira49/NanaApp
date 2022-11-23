@@ -5,15 +5,14 @@ from kivy.uix.widget import Widget
 from kivymd.app import MDApp
 from kivymd.uix.screen import Screen
 from kivy.lang import Builder
-<<<<<<< HEAD
-from kivy.properties import ObjectProperty
+#from kivy.properties import ObjectProperty
 from kivy.uix.screenmanager import ScreenManager, Screen, FadeTransition
-
+# ============================================================================== Base de datos
+import psycopg2
+import os
 # ============================================================================== Librerias
 from pyautogui import sleep
-=======
 from kivy.garden.notification import Notification
->>>>>>> 9cef50ccbb8d41173dc0e8ab403d805ca8c1bf40
 import speech_recognition as sr
 import pyttsx3
 import pywhatkit
@@ -22,7 +21,7 @@ import random
 # ============================================================================== Archivos
 import function as f
 import time
-import serial
+#import serial
 import webbrowser
 import json
 
@@ -46,10 +45,6 @@ class NanaApp(MDApp):
         self.theme_cls.primary_palette = "Green"
         return
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 9cef50ccbb8d41173dc0e8ab403d805ca8c1bf40
     def callback(self):
         print("Preparando escucha...")
         word = ""
@@ -137,13 +132,12 @@ class NanaApp(MDApp):
                 x = i.replace('PhoneNumber:', "")
                 lista_tlf2.append(x)
 
-<<<<<<< HEAD
             diccionario = {}
             cont = 0
             while cont < len(lista_nombre2):
                 diccionario[lista_nombre2[cont]] = lista_tlf2[cont]
                 cont += 1
-=======
+
         listener = sr.Recognizer()
         voice_id = "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_ES-MX_SABINA_11.0"
         nanavoice = pyttsx3.init()
@@ -198,9 +192,7 @@ class NanaApp(MDApp):
                 pywhatkit.search(busqueda)
 
         run_nana()
->>>>>>> 9cef50ccbb8d41173dc0e8ab403d805ca8c1bf40
-
-            print(diccionario)
+        print(diccionario)
 
 
 
