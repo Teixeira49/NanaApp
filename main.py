@@ -15,8 +15,9 @@ from time import sleep
 import function as f
 import json
 import random
-import serial
 import webbrowser
+from tkinter import *
+from tkcalendar import Calendar 
 
 
 with open('data_talk.json', 'r') as file:
@@ -25,7 +26,8 @@ class MDScreen(Screen):
     pass
 class PersonScreen(Screen):
     pass
-
+class CalendarScreen(Screen):
+    pass
 class SmsScreen(Screen):
     pass
 class NanaApp(MDApp):
@@ -52,6 +54,38 @@ class NanaApp(MDApp):
     def call(self):
         webbrowser.open_new_tab(
             'https://www.google.com/search?q=como+llamar&client=opera-gx&sxsrf=ALiCzsbpqNiZ73J-mRKVXwcrIKb2JxxmEw%3A1667780733762&ei=fVBoY7qXLsyGwbkPn-CfyAI&ved=0ahUKEwj6ycux55r7AhVMQzABHR_wBykQ4dUDCA4&uact=5&oq=como+llamar&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIKCAAQgAQQhwIQFDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDoHCCMQ6gIQJzoECCMQJzoKCC4QxwEQ0QMQQzoICAAQgAQQsQM6CwgAEIAEELEDEIMBOg4ILhCABBCxAxDHARDRAzoRCC4QgAQQsQMQgwEQxwEQ0QM6DQguEMcBENEDENQCEEM6BwgAEIAEEAM6CAgAELEDEIMBOgQIABBDOgsIABCABBCxAxDJAzoLCC4QgAQQsQMQgwE6CAguEIAEENQCSgQITRgBSgQIQRgASgQIRhgAUABY3g5g5RJoAXABeACAAe8BiAGmDZIBBTAuOC4zmAEAoAEBsAEKwAEB&sclient=gws-wiz-serp')
+
+    
+    def agendar(self):
+        root = Tk() 
+        root.geometry("400x400")  
+        cal = Calendar(root, selectmode = 'day', year = 2022, month = 11, day = 24)   
+        cal.pack(pady = 20) 
+        
+        def grad_date(): 
+            date.config(text = "Selected Date is: " + cal.get_date()) 
+            var = cal.get_date()
+            with open("fecha.txt", "a") as file:
+                file.write(var)
+            root.destroy()
+            
+        
+        Button(root, text = "Elegir fecha", command = grad_date).pack(pady = 20) 
+        
+        date = Label(root, text = "") 
+        date.pack(pady = 20)
+
+        
+        root.mainloop()
+
+
+        with open("fecha.txt", "a") as file:
+                file.write(f" {self.root.get_screen('CalendarScreen').ids.recordatorio.text}")
+                file.write("\n")
+        self.root.get_screen('CalendarScreen').ids.recordatorio.text = ""
+
+
+
 
     def search(self):
         order = self.root.get_screen('MDScreen').ids.data.text
@@ -123,7 +157,6 @@ class NanaApp(MDApp):
             while cont < len(lista_nombre2):
                 diccionario[lista_nombre2[cont]] = lista_tlf2[cont]
                 cont += 1
-
 
 
         persona = self.root.get_screen('SmsScreen').ids.people.text
