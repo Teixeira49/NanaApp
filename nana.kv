@@ -12,6 +12,10 @@ ScreenManager:
         id: sms_screen
         name: 'SmsScreen'
         manager: 'screen_manager'
+    CalendarScreen:
+        id: calendar_screen
+        name: 'CalendarScreen'
+        manager: 'screen_manager'
 
 # ============================================================================================
 #  >> VENTANA PRINCIPAL
@@ -99,6 +103,16 @@ ScreenManager:
         icon_size_hint: "80sp"
         padding: 5
         on_release: app.root.current = 'SmsScreen'
+# --------------------------------------------------------------------------------------------
+    MDFloatingActionButton:
+        icon: "calendar"
+        icon_color: "white"
+        theme_icon_color: "Custom"
+        pos_hint : {'center_x': 0.1, 'center_y': 0.1}
+        size_hint: 0.075, 0.07
+        icon_size_hint: "80sp"
+        padding: 5
+        on_release: app.root.current = 'CalendarScreen'
 # ============================================================================================
 #  >> VENTANA DE PERFIL
 # --------------------------------------------------------------------------------------------
@@ -307,3 +321,41 @@ ScreenManager:
         size_hint: 0.1, 0.1
         icon_size_hint: "80sp"
         padding: 5
+#----------------------------------------------------------------------------------------
+# Modulo de calendario
+#----------------------------------------------------------------------------------------
+<CalendarScreen>
+#----------------------------------------------------------------------------------------
+    MDLabel:
+        text: "Escribir"
+        color: 0,0,0
+        font_size: "40sp"
+        pos_hint : {'center_x': 0.5, 'center_y': 0.90}
+        halign: 'center'
+        font_family: 'khmer'
+# --------------------------------------------------------------------------------------------
+    MDTextField:
+        id: recordatorio
+        hint_text: "Recordatorio"
+        helper_text_mode: "on_focus"
+        color_mode: 'accent'
+        mode: "rectangle"
+        pos_hint : {'center_x': 0.5, 'center_y': 0.5}
+        size_hint: 0.5, 0.2
+        max_text_length:
+
+# --------------------------------------------------------------------------------------------
+    MDRectangleFlatButton:
+        text: "Agendar"
+        text_color: "black"
+        md_bg_color:[1,1,1,1]
+        line_color: "black"
+        on_press: app.agendar()
+        pos_hint : {'center_x': 0.5, 'center_y': 0.3}
+# --------------------------------------------------------------------------------------------
+    MDRectangleFlatButton:                          # Return al inicio:
+        text: 'Volver'
+        font_size: 25
+        pos_hint : {'center_x': 0.5, 'center_y': 0.1}
+        on_release: app.root.current = 'MDScreen'
+# --------------------------------------------------------------------------------------------
