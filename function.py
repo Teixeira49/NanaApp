@@ -5,7 +5,6 @@ from kivy.uix.widget import Widget
 from kivymd.app import MDApp
 from kivymd.uix.screen import MDScreen
 from kivy.lang import Builder
-#from kivy.garden.notification import Notification
 from googlesearch import search
 import webbrowser
 # ============================================================================== Librerias Kivy ===========
@@ -18,11 +17,14 @@ import requests
 import json
 from time import sleep
 from datetime import datetime as dt
+from plyer import notification
+import time
 # ============================================================================== Librerias ================
 #  >> Carga de archivos
 # ---------------------------------------------------------------------------------------------------------
 with open('data_talk.json', 'r') as file:
     data = json.load(file)
+
 # =========================================================================================================
 #  >> Funcionamiento del COMMAND
 # ---------------------------------------------------------------------------------------------------------
@@ -173,3 +175,14 @@ def salud(illness):
         tell[0] += f"{i}, {temp}. "
     talk(tell[0])
 # ---------------------------------------------------------------------------------------------------------
+def show_notification(self, tittle, message):
+    notification.notify(
+        title=tittle,
+        message=message,
+        timeout=10,
+        app_name="Nana",
+        app_icon="./Images/LOGO NANA.ico"
+    )
+# ---------------------------------------------------------------------------------------------------------
+
+

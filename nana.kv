@@ -19,6 +19,10 @@ ScreenManager:
         id: calendar_screen
         name: 'CalendarScreen'
         manager: 'screen_manager'
+    AppointmentScreen:
+        id: appointment_screen
+        name: 'AppointmentScreen'
+        manager: 'screen_manager'
 # ============================================================================================
 #  >> VENTANA PRINCIPAL
 # ============================================================================================
@@ -80,14 +84,13 @@ ScreenManager:
 # --------------------------------------------------------------------------------------------
     MDTextField:
         id: data
-        hint_text: "¿Que desea buscar?"
+        hint_text: "¿Qué desea buscar?"
         helper_text_mode: "on_focus"
         color_mode: 'accent'
         mode: "rectangle"
         pos_hint : {'center_x': 0.4, 'center_y': 0.45}
         max_text_length: 20
         size_hint: 0.6, 0.1
-        icon_right: "android"
 # --------------------------------------------------------------------------------------------
     MDFloatingActionButton:
         icon: "magnify"
@@ -326,34 +329,72 @@ ScreenManager:
 <CalendarScreen>
 # ------------------------------------------------------------------------------------------------------
     MDLabel:
-        text: "Escribir"
-        color: 0,0,0
-        font_size: "40sp"
-        pos_hint : {'center_x': 0.5, 'center_y': 0.90}
+        id: new_recordatorio
+        text: "Nuevo recordatorio"
+        pos_hint:{'center_x': 0.5, 'center_y': 0.8}
+        font_size: "30sp"
         halign: 'center'
-        font_family: 'khmer'
+        bold: True
+        font_family: 'niramit'
 # ------------------------------------------------------------------------------------------------------
     MDTextField:
-        id: recordatorio
-        hint_text: "Recordatorio"
+        id: date_name
+        hint_text: " ¿Qué hay para esta fecha?"
         helper_text_mode: "on_focus"
         color_mode: 'accent'
         mode: "rectangle"
-        pos_hint : {'center_x': 0.5, 'center_y': 0.5}
-        size_hint: 0.5, 0.2
-        max_text_length:
+        pos_hint : {'center_x': 0.5, 'center_y': 0.65}
+        max_text_length: 1000
+        size_hint: 0.4, 0.1
+# ------------------------------------------------------------------------------------------------------
+    MDRaisedButton:
+        text: "Seleccionar fecha"
+        pos_hint:{'center_x': 0.4, 'center_y': 0.45}
+        on_release: app.show_date_picker()
+# ------------------------------------------------------------------------------------------------------
+    MDLabel:
+        id: date_label
+        text: ""
+        pos_hint:{'center_x': 0.90, 'center_y': 0.57}
+# ------------------------------------------------------------------------------------------------------
+    MDRaisedButton:
+        text: "Seleccionar hora"
+        pos_hint: {'center_x': .6, 'center_y': 0.45}
+        on_release: app.show_time_picker()
+# ------------------------------------------------------------------------------------------------------
+    MDLabel:
+        id: time_label
+        text: ""
+        pos_hint: {'center_x': .96, 'center_y': .52}
+# ------------------------------------------------------------------------------------------------------
+    MDRaisedButton:
+        text: "Guardar"
+        pos_hint:{'center_x': 0.5, 'center_y': 0.35}
+        on_release:
+            app.save_event()
+            app.appnt_list()
 # ------------------------------------------------------------------------------------------------------
     MDRectangleFlatButton:
-        text: "Agendar"
-        text_color: "black"
-        md_bg_color:[1,1,1,1]
-        line_color: "black"
-        on_press: app.agendar()
-        pos_hint : {'center_x': 0.5, 'center_y': 0.3}
+        text: 'Ver recordatorios'
+        font_size: 20
+        pos_hint : {'center_x': 0.85, 'center_y': 0.1}
+        on_release: app.root.current = 'AppointmentScreen'
 # ------------------------------------------------------------------------------------------------------
     MDRectangleFlatButton:                                  # Return al inicio:
         text: 'Volver'
-        font_size: 25
-        pos_hint : {'center_x': 0.5, 'center_y': 0.1}
+        font_size: 20
+        pos_hint : {'center_x': 0.1, 'center_y': 0.1}
         on_release: app.root.current = 'MDScreen'
+# ------------------------------------------------------------------------------------------------------
+<AppointmentScreen>
+# ------------------------------------------------------------------------------------------------------
+    ScrollView:
+        MDList:
+            id: container
+# ------------------------------------------------------------------------------------------------------
+    MDRectangleFlatButton:                                  # Return al calendario:
+        text: 'Volver'
+        font_size: 20
+        pos_hint : {'center_x': 0.1, 'center_y': 0.1}
+        on_release: app.root.current = 'CalendarScreen'
 # ------------------------------------------------------------------------------------------------------
