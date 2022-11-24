@@ -12,6 +12,7 @@ from kivymd.uix.list import MDList
 from kivy.uix.scrollview import ScrollView
 from kivymd.uix.list import MDList, ThreeLineListItem
 # ============================================================================== Librerias Kivy ===========
+from datetime import datetime as dt
 import function as f
 import json
 import random
@@ -144,7 +145,6 @@ class NanaApp(MDApp):
     def on_save(self, instance, value, date_range):
         self.root.get_screen('CalendarScreen').ids.date_label.text = f'{str(date_range[0])} / {str(date_range[-1])}'
 
-
     def on_cancel(self, instance, value):
         self.root.get_screen('CalendarScreen').ids.date_label.text = ""
 
@@ -197,6 +197,22 @@ class NanaApp(MDApp):
                                           tertiary_text=y)
         self.root.get_screen('AppointmentScreen').ids.container.add_widget(items)
 
+    def saveProfile(self):
+        try:
+            x,y,z = (self.root.get_screen('PersonScreen').ids.people_da.text), (self.root.get_screen('PersonScreen').ids.people_mo.text), (self.root.get_screen('PersonScreen').ids.people_ye.text)
+            if (self.root.get_screen('PersonScreen').ids.people_d.text).isnumeric():
+                data["perfil"]["dni"] = self.root.get_screen('PersonScreen').ids.people_d.text
+            if self.root.get_screen('PersonScreen').ids.people_n.text != "" and self.root.get_screen('PersonScreen').ids.people_p.text != "":
+                data["perfil"]["Nombre"] = self.root.get_screen('PersonScreen').ids.people_n.text
+                data["perfil"]["Apellido"] = self.root.get_screen('PersonScreen').ids.people_p.text,
+            if dt.strptime(f"{x}-{y}-{z}", '%d-%m-%Y') == True and dt.strptime(f"{x}-{y}-{z}", '%d-%m-%Y') < dt.now():
+                data["perfil"]["cumpleaos"] = f"{x}-{y}-{z}"
+            c = json.dumps(data, indent="  ")
+            with open("data_talk.json", 'w', encoding='utf-8') as f:
+                f.write(c)
+                f.close()
+        except:
+            print("Error de generacion")
 # ---------------------------------------------------------------------------------------------------------
 if __name__ == "__main__":
     NanaApp().run()

@@ -64,6 +64,10 @@
             "Te deseo que estes vivo cada daa de tu vida. Jonathan Swift",
             "La excelencia no es un acto, es un habito. Aristoteles",
             "Se tu mismo. Todos los demas ya estan ocupados. Oscar Wilde."
+        ],
+        "dice": [
+            ["Acabo de lanzar el dado. y salio un ", "He tirado de los dados, salio ", "El dado dice un ", "En el dado me salio un ", "Lance el dado y salio "],
+            ["Sale la moneda, y cae ", "Lanzo la moneda, salio ", "Moneda al aire y cae ", "En la moneda salio "]
         ]
     },
     "weathers":{

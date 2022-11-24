@@ -80,6 +80,11 @@ def run_nana(order):                                    # Realizacion de la orde
         repeat(order.replace("repetir", "").replace("repite", ""))
     elif "cuentame" in order.lower() or "quien soy" in order.lower() or "chiste" in order.lower() or "cuento" in order.lower() or "historia" in order.lower() or "aforismo" in order.lower() or "frase" in order.lower():
         tell(order)
+    elif "lanza" in order.lower():
+        if "moneda" in order.lower():
+            g_dice(1)
+        elif "dado" in order.lower():
+            g_dice(0)
     else:           # realizara la consulta automaticamente en el internet
         talk("De " + order + " " + data["result"][random.randint(0, len(data["result"])-1)])
         lista = search(order)
@@ -161,6 +166,14 @@ def notify_fech():
         x,y = ((now.year) - data["perfil"]["cumpleaos"][6:10]), data["perfil"]["Nombre"]
         talk(f"FELICIDADES {y} , HOY ES TU CUMPLEAÑOS NUMERO {x}")# AÑADIR tambien como RECORDATORIO
 # ---------------------------------------------------------------------------------------------------------
+def g_dice(t):
+    x = data["phrase"]["dice"][t][random.randint(0, (len(data["phrase"]["dice"][t])-1))]
+    y = ["Cara", "Cruz"]
+    if t == 0:
+        talk(f"{x}{random.randint(1, 6)}")
+    elif t == 1:
+        talk(f"{x}{random.choice(y)}")
+# ---------------------------------------------------------------------------------------------------------
 def salud(illness):
     tell = ["", ""]
     for i in data["salud"]["frase"]:
@@ -184,5 +197,3 @@ def show_notification(self, tittle, message):
         app_icon="./Images/LOGO NANA.ico"
     )
 # ---------------------------------------------------------------------------------------------------------
-
-
