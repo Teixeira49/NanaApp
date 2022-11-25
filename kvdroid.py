@@ -1,0 +1,34 @@
+#En el terminal poner
+# Android min-api21
+# pip install kvdroid
+# requirement = kvdroid
+
+from kvdroid.tools.contact import get_contact_details
+from kvdroid.jclass.android.graphics import Color
+from kvdroid.tools.notification import create_notification
+from kvdroid.tools import get_resource
+from kvdroid.tools.package import all_main_activities
+
+create_notification(
+    small_icon=get_resource("drawable").ico_nocenstore,  # app icon
+    channel_id="1", title="You have a message",
+    text="hi, just wanted to check on you",
+    ids=1, channel_name=f"ch1",
+    large_icon="assets/image.png",
+    expandable=True,
+    small_icon_color=Color().rgb(0x00, 0xCC, 0x00),  # 0x00 0xCC 0x00 para lightgreen
+    big_picture="assets/image.png"
+)
+
+get_contact_details("phone_book") # gets a dictionary of all contact both contact name and phone mumbers
+get_contact_details("names") # gets a list of all contact names
+get_contact_details("mobile_no") # gets a list of all contact phone numbers
+
+print(all_main_activities())
+
+"""
+[{'com.android.settings': 'com.android.settings.Settings'},
+ {'com.android.vending': 'com.android.vending.AssetBrowserActivity'},
+ {'com.google.android.contacts': 'com.android.contacts.activities.PeopleActivity'},
+ {'com.google.android.deskclock': 'com.android.deskclock.DeskClock'}...]
+"""
