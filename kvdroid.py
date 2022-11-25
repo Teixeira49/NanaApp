@@ -22,4 +22,3 @@ create_notification(
 get_contact_details("phone_book") # gets a dictionary of all contact both contact name and phone mumbers
 get_contact_details("names") # gets a list of all contact names
 get_contact_details("mobile_no") # gets a list of all contact phone numbers
-
