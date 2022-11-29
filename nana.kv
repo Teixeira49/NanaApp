@@ -23,6 +23,14 @@ ScreenManager:
         id: appointment_screen
         name: 'AppointmentScreen'
         manager: 'screen_manager'
+    ContactoScreen:
+        id: contacto_screen
+        name: 'ContactoScreen'
+        manager: 'screen_manager'
+    ListaConScreen:
+        id: lista_con_screen
+        name: 'ListaConScreen'
+        manager: 'screen_manager'
 # ============================================================================================
 #  >> VENTANA PRINCIPAL
 # ============================================================================================
@@ -41,11 +49,22 @@ ScreenManager:
         icon_color: "white"
         theme_icon_color: "Custom"
         elevation: 0
-        pos_hint : {'center_x': 0.85, 'center_y': 0.95}
+        pos_hint : {'center_x': 0.55, 'center_y': 0.30}
         size_hint: 0.075, 0.07
         icon_size_hint: "80sp"
         padding: 5
         on_release: app.root.current = 'PersonScreen'
+#---------------------------------------------------------------------------------------------
+    MDFloatingActionButton:
+        icon: "mdi-book-account-outline"
+        icon_color: "white"
+        theme_icon_color: "Custom"
+        elevation: 0
+        pos_hint : {'center_x': 0.45, 'center_y': 0.30}
+        size_hint: 0.075, 0.07
+        icon_size_hint: "80sp"
+        padding: 5
+        on_release: app.root.current = 'ContactoScreen'
 # --------------------------------------------------------------------------------------------
     MDRectangleFlatButton:
         text: "Help"
@@ -53,7 +72,7 @@ ScreenManager:
         line_color: "red"
         md_bg_color:[1,0,0,1]
         pos_hint : {'center_x': 0.1, 'center_y': 0.95}
-        size_hint: 0.05, 0.015
+        size_hint: 0.015, 0.015
         on_press: app.call()
 # --------------------------------------------------------------------------------------------
     MDLabel:
@@ -90,7 +109,7 @@ ScreenManager:
         helper_text_mode: "on_focus"
         color_mode: 'accent'
         mode: "rectangle"
-        pos_hint : {'center_x': 0.4, 'center_y': 0.45}
+        pos_hint : {'center_x': 0.5, 'center_y': 0.45}
         max_text_length: 1000
         size_hint: 0.5, 0.1
 # --------------------------------------------------------------------------------------------
@@ -107,7 +126,7 @@ ScreenManager:
         icon_color: "white"
         theme_icon_color: "Custom"
         elevation: 0
-        pos_hint : {'center_x': 0.85, 'center_y': 0.1}
+        pos_hint : {'center_x': 0.55, 'center_y': 0.20}
         size_hint: 0.075, 0.07
         icon_size_hint: "80sp"
         padding: 5
@@ -118,7 +137,7 @@ ScreenManager:
         icon_color: "white"
         theme_icon_color: "Custom"
         elevation: 0
-        pos_hint : {'center_x': 0.1, 'center_y': 0.1}
+        pos_hint : {'center_x': 0.45, 'center_y': 0.20}
         size_hint: 0.075, 0.07
         icon_size_hint: "80sp"
         padding: 5
@@ -194,6 +213,7 @@ ScreenManager:
 # --------------------------------------------------------------------------------------------
     MDLabel:                                                # Aqui va su DNI
         text: "Cedula: "
+        hint_text: "cedula"
         color: 0,0,0
         font_size: "20sp"
         pos_hint : {'center_x': 0.21, 'center_y': 0.55}
@@ -266,13 +286,13 @@ ScreenManager:
         font_family: 'khmer'
     MDCheckbox:
         pos_hint : {'center_x': 0.7, 'center_y': 0.25}
-        #on_active: app.on_checkbox_active(*args)
+        on_active: app.on_checkbox_active(*args)
     MDCheckbox:
         pos_hint : {'center_x': 0.7, 'center_y': 0.20}
-        #on_active: app.on_checkbox_active(*args)
+        on_active: app.on_checkbox_active(*args)
     MDCheckbox:
         pos_hint : {'center_x': 0.7, 'center_y': 0.15}
-        #on_active: app.on_checkbox_active(*args)
+        on_active: app.on_checkbox_active(*args)
 # ======================================================================================================
 #   >> Modulo de mensaje
 # ------------------------------------------------------------------------------------------------------
@@ -408,3 +428,87 @@ ScreenManager:
         pos_hint : {'center_x': 0.1, 'center_y': 0.1}
         on_release: app.root.current = 'CalendarScreen'
 # ------------------------------------------------------------------------------------------------------
+<ContactoScreen>
+    MDLabel:
+        id: contacto
+        text: "Agregar contactos importantes"
+        color: 0,0,0
+        font_size: "40sp"
+        pos_hint : {'center_x': 0.5, 'center_y': 0.90}
+        halign: 'center'
+        font_family: 'khmer'
+
+    MDTextField:
+        id: contact_name
+        hint_text: "Nombre"
+        helper_text_mode: "on_focus"
+        color_mode: 'accent'
+        mode: "rectangle"
+        pos_hint : {'center_x': 0.5, 'center_y': 0.67}
+        max_text_length: 256
+        size_hint: 0.4, 0.1
+
+    MDLabel:
+        id: name_label
+        text: ""
+        text_color: "white"
+        pos_hint:{'center_x': 0.1, 'center_y': 0.2}
+
+    MDTextField:
+        id: contact_lastname
+        hint_text: "Apellido"
+        helper_text_mode: "on_focus"
+        color_mode: 'accent'
+        mode: "rectangle"
+        pos_hint : {'center_x': 0.5, 'center_y': 0.57}
+        max_text_length: 128
+        size_hint: 0.4, 0.1
+
+    MDLabel:
+        id: lastname_label
+        text: ""
+        text_color: "white"
+        pos_hint:{'center_x': 0.2, 'center_y': 0.2}
+
+    MDTextField:
+        id: phone_number
+        hint_text: "Numero de tlf"
+        helper_text_mode: "on_focus"
+        color_mode: 'accent'
+        mode: "rectangle"
+        pos_hint : {'center_x': 0.5, 'center_y': 0.47}
+        max_text_length: 11
+        size_hint: 0.4, 0.1
+
+    MDLabel:
+        id: tlf_label
+        text: ""
+        text_color: "white"
+        pos_hint:{'center_x': 0.3, 'center_y': 0.2}
+
+    MDRaisedButton:
+        text: "Guardar"
+        elevation: 0
+        pos_hint:{'center_x': 0.5, 'center_y': 0.35}
+        on_release:
+            app.save_contact()
+            app.appnt_listCon()
+
+    MDRectangleFlatButton:
+        text: 'Ver Contactos'
+        font_size: 20
+        elevation: 0
+        pos_hint : {'center_x': 0.85, 'center_y': 0.1}
+        on_release: app.root.current = 'ListaConScreen'
+#-------------------------------------------------------------------------------------------------------
+<ListaConScreen>
+# ------------------------------------------------------------------------------------------------------
+    ScrollView:
+        MDList:
+            id: ContactContainer
+
+    MDRectangleFlatButton:
+        text: 'Volver'
+        font_size: 20
+        pos_hint : {'center_x': 0.1, 'center_y': 0.1}
+        on_release: app.root.current = 'ContactoScreen'

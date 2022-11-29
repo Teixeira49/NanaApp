@@ -14,6 +14,11 @@ from kivymd.uix.list import MDList
 from kivy.uix.scrollview import ScrollView
 from kivymd.uix.list import MDList, ThreeLineListItem
 from datetime import date, datetime
+#Base de datos
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import db
+
 # ============================================================================== Librerias Kivy ===========
 import function as f
 import json
@@ -25,6 +30,11 @@ import webbrowser
 with open('data_talk.json', 'r') as file:
     data = json.load(file)
 
+firebase_sdk = credentials.Certificate("nanaapp-firebase-adminsdk-s60of-85ba4b4b6d.json")
+firebase_admin.initialize_app(firebase_sdk, {'databaseURL': 'https://nanaapp-default-rtdb.firebaseio.com/'})
+
+#Recordatorios
+reminders = db.reference('/Reminders')
 
 # ---------------------------------------------------------------------------------------------------------
 #  >> Paneles
@@ -37,9 +47,13 @@ class CalendarScreen(Screen):
     pass
 class SmsScreen(Screen):
     pass
-
 class AppointmentScreen(Screen):
     pass
+class ContactoScreen(Screen):
+    pass
+class ListaConScreen(Screen):
+    pass
+
 class NanaApp(MDApp):
     eventos = {}
     def build(self):
@@ -208,8 +222,32 @@ class NanaApp(MDApp):
         else:
             pass
 
+    def save_contact(self):
+        nombre = self.root.get_screen('ContactoScreen').ids.contact_name.text
+        apellido = self.root.get_screen('ContactoScreen').ids.contact_lastname.text
+        tlf = self.root.get_screen('ContactoScreen').ids.phone_number.text
+        self.contactos={}
+        if apellido not in self.contactos.keys():
+            self.contactos[nombre] = {}
+            self.contactos[nombre][apellido] = str(tlf)
+        else:
+            self.contactos[nombre][apellido] = str(tlf)
+
+        print(self.contactos)
+
+        self.root.get_screen('ContactoScreen').ids.name_label.text = ""
+        self.root.get_screen('ContactoScreen').ids.lastname_label.text = ""
+        self.root.get_screen('ContactoScreen').ids.tlf_label.text = ""
+
+    def appnt_listCon(self):
+        for i in list(self.contactos.keys()):
+            for y in list(self.contactos[i].keys()):
+                items = ThreeLineListItem(text=str(i+" "+y), secondary_text=str(self.contactos[i][y]), tertiary_text="cpnyactos")
+        self.root.get_screen('ListaConScreen').ids.ContactContainer.add_widget(items)
+
 # ---------------------------------------------------------------------------------------------------------
 if __name__ == "__main__":
     NanaApp().run()
     #NanaApp().show_notification("hey user", "take a break now")
+    NanaApp().notificar_recordatorio(eventos)
 # ---------------------------------------------------------------------------------------------------------
