@@ -1,18 +1,16 @@
-# =========================================================================================================
-from turtle import width
-from kivy.app import App
-from kivy.uix.widget import Widget
 from kivymd.app import MDApp
 from kivymd.uix.screen import Screen
-from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen, FadeTransition
 from kivymd.uix.pickers import MDDatePicker
 from kivymd.uix.pickers import MDTimePicker
-from kivymd.uix.list import MDList
-from kivy.uix.scrollview import ScrollView
 from kivymd.uix.list import MDList, ThreeLineListItem
+from datetime import date, datetime
+#Base de datos
+'''import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import db'''
+
 # ============================================================================== Librerias Kivy ===========
-from datetime import datetime as dt
 import function as f
 import json
 import random
@@ -38,6 +36,10 @@ class SmsScreen(Screen):
 
 class AppointmentScreen(Screen):
     pass
+class ContactoScreen(Screen):
+    pass
+class ListaConScreen(Screen):
+    pass
 class NanaApp(MDApp):
     eventos = {}
     def build(self):
@@ -55,10 +57,6 @@ class NanaApp(MDApp):
         f.talk(data["query"][random.randint(0, len(data["query"]) - 1)])
         f.run_nana(order)
 
-
-    def profile(self):
-        webbrowser.open_new_tab(
-            'https://www.google.com/search?q=como+crear+perfil&client=opera-gx&sxsrf=ALiCzsbEvkZRB-XStGjrA7B8OmgWvB8rdg%3A1667780750279&ei=jlBoY97aEJyZwbkPuKOL-Ac&ved=0ahUKEwje2bu555r7AhWcTDABHbjRAn8Q4dUDCA4&uact=5&oq=como+crear+perfil&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQ6CggAEEcQ1gQQsAM6BwgAELADEEM6DQgAEOQCENYEELADGAE6BAgjECc6CggAEIAEEIcCEBQ6CAgAELEDEIMBOgUIABCxAzoLCAAQgAQQsQMQgwE6CAgAEIAEELEDOggIABCABBDJA0oECE0YAUoECEEYAEoECEYYAVCCzgNYnuwDYLPuA2gCcAF4AoABvgWIAY0gkgENMi44LjIuMy4wLjEuMZgBAKABAcgBEcABAdoBBggBEAEYCQ&sclient=gws-wiz-serp')
 
     def call(self):
         webbrowser.open_new_tab(
@@ -145,6 +143,7 @@ class NanaApp(MDApp):
     def on_save(self, instance, value, date_range):
         self.root.get_screen('CalendarScreen').ids.date_label.text = f'{str(date_range[0])} / {str(date_range[-1])}'
 
+
     def on_cancel(self, instance, value):
         self.root.get_screen('CalendarScreen').ids.date_label.text = ""
 
@@ -197,24 +196,38 @@ class NanaApp(MDApp):
                                           tertiary_text=y)
         self.root.get_screen('AppointmentScreen').ids.container.add_widget(items)
 
-    def saveProfile(self):
-        try:
-            x,y,z = (self.root.get_screen('PersonScreen').ids.people_da.text), (self.root.get_screen('PersonScreen').ids.people_mo.text), (self.root.get_screen('PersonScreen').ids.people_ye.text)
-            if (self.root.get_screen('PersonScreen').ids.people_d.text).isnumeric():
-                data["perfil"]["dni"] = self.root.get_screen('PersonScreen').ids.people_d.text
-            if self.root.get_screen('PersonScreen').ids.people_n.text != "" and self.root.get_screen('PersonScreen').ids.people_p.text != "":
-                data["perfil"]["Nombre"] = self.root.get_screen('PersonScreen').ids.people_n.text
-                data["perfil"]["Apellido"] = self.root.get_screen('PersonScreen').ids.people_p.text,
-            if dt.strptime(f"{x}-{y}-{z}", '%d-%m-%Y') == True and dt.strptime(f"{x}-{y}-{z}", '%d-%m-%Y') < dt.now():
-                data["perfil"]["cumpleaos"] = f"{x}-{y}-{z}"
-            c = json.dumps(data, indent="  ")
-            with open("data_talk.json", 'w', encoding='utf-8') as f:
-                f.write(c)
-                f.close()
-        except:
-            print("Error de generacion")
+    def notificar_recordatorio(self, eventos):
+        today = date.today()
+        now = datetime.now()
+        if today == eventos[today].key() and now == eventos[now].key():
+            f.show_notification("Recordatorio", eventos.eventos[today][now])
+        else:
+            pass
+
+    def save_contact(self):
+        nombre = self.root.get_screen('ContactoScreen').ids.contact_name.text
+        apellido = self.root.get_screen('ContactoScreen').ids.contact_lastname.text
+        tlf = self.root.get_screen('ContactoScreen').ids.phone_number.text
+        self.contactos={}
+        if apellido not in self.contactos.keys():
+            self.contactos[nombre] = {}
+            self.contactos[nombre][apellido] = str(tlf)
+        else:
+            self.contactos[nombre][apellido] = str(tlf)
+
+        print(self.contactos)
+
+        self.root.get_screen('ContactoScreen').ids.name_label.text = ""
+        self.root.get_screen('ContactoScreen').ids.lastname_label.text = ""
+        self.root.get_screen('ContactoScreen').ids.tlf_label.text = ""
+
+    def appnt_listCon(self):
+        for i in list(self.contactos.keys()):
+            for y in list(self.contactos[i].keys()):
+                items = ThreeLineListItem(text=str(i+" "+y), secondary_text=str(self.contactos[i][y]), tertiary_text="cpnyactos")
+        self.root.get_screen('ListaConScreen').ids.ContactContainer.add_widget(items)
 # ---------------------------------------------------------------------------------------------------------
 if __name__ == "__main__":
     NanaApp().run()
     #NanaApp().show_notification("hey user", "take a break now")
-# ---------------------------------------------------------------------------------------------------------
+    #NanaApp().notificar_recordatorio(eventos)
