@@ -5,6 +5,7 @@ import webbrowser
 # ============================================================================== Librerias Kivy ===========
 import pyautogui as pg
 import speech_recognition as sr
+from time import sleep
 from datetime import datetime as dt
 import pyttsx3
 import pywhatkit
@@ -16,7 +17,6 @@ import json
 # ---------------------------------------------------------------------------------------------------------
 with open('data_talk.json', 'r') as file:
     data = json.load(file)
-
 # =========================================================================================================
 #  >> Funcionamiento del COMMAND
 # ---------------------------------------------------------------------------------------------------------
@@ -112,7 +112,6 @@ def talk(text):
     print(text)
     nanavoice.say(text)
     nanavoice.runAndWait()
-
 # ---------------------------------------------------------------------------------------------------------
 def tell(x):
     if "quien soy" in x:

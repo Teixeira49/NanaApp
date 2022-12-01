@@ -10,12 +10,11 @@ from kivy.uix.scrollview import ScrollView
 from kivymd.uix.list import MDList, ThreeLineListItem
 from datetime import date, datetime
 # ============================================================================== Base de datos ============
-from firebase_admin import credentials, db
+from firebase_admin import credentials, db, initialize_app
 # ============================================================================== Librerias Kivy ===========
 import function as f
 import json
 import random
-import webbrowser
 # ============================================================================== Archivos =================
 #  >> Carga de archivos:
 # ---------------------------------------------------------------------------------------------------------
@@ -23,7 +22,7 @@ with open('data_talk.json', 'r') as file:
     data = json.load(file)
 
 firebase_sdk = credentials.Certificate("nanaapp-firebase-adminsdk-s60of-85ba4b4b6d.json")
-firebase_admin.initialize_app(firebase_sdk, {'databaseURL': 'https://nanaapp-default-rtdb.firebaseio.com/'})
+initialize_app(firebase_sdk, {'databaseURL': 'https://nanaapp-default-rtdb.firebaseio.com/'})
 
 #Recordatorios
 reminders = db.reference('/Reminders')
