@@ -1,18 +1,14 @@
 # =========================================================================================================
-#from re import X
+from re import X
 from kivy.app import App
 from kivy.uix.widget import Widget
 from kivymd.app import MDApp
 from kivymd.uix.screen import MDScreen
 from kivy.lang import Builder
-from googlesearch import search
-#from googlesearch.googlesearch import GoogleSearch #para solucionar el error de search en mi compu
-#import webbrowser
 from plyer import notification
-from kvdroid.tools.contact import get_contact_details
-from kvdroid.jclass.android.graphics import Color
-from kvdroid.tools.notification import create_notification
-from kvdroid.tools import get_resource
+#from googlesearch import search
+from googlesearch.googlesearch import GoogleSearch #para solucionar el error de search en mi compubrew install portaudiobrew install portaudio
+import webbrowser
 # ============================================================================== Librerias Kivy ===========
 import pyautogui as pg
 import speech_recognition as sr
@@ -21,6 +17,7 @@ import pywhatkit
 import random
 import requests
 import json
+import time
 # ============================================================================== Librerias ================
 #  >> Carga de archivos
 # ---------------------------------------------------------------------------------------------------------
@@ -49,7 +46,7 @@ def take_command():                                     # Peticion de la orden
 # ---------------------------------------------------------------------------------------------------------
 def run_nana(order):                                    # Realizacion de la orden
     now = dt.now()
-    if 'reproduce' in order.lower(): # optimizar porfavor
+    if 'reproduce' in order.lower():
         song = order.replace('reproduce', '')
         talk('Reproduciendo ' + song)
         pywhatkit.playonyt(song)
@@ -66,11 +63,6 @@ def run_nana(order):                                    # Realizacion de la orde
     elif "recordatorio" in order.lower():
         talk("¿Que desea recordar?")
         mensaje = take_command()
-    elif "hipertenso" in order.lower(): # Modificar cuando tengamos la BD implementada # ["hipertenso", "hipertensa", "hipertension"]
-        #notify()
-        salud("hipertenso") # https://www.medicalnewstoday.com/articles/es/alimentos-a-evitar-con-presion-arterial-alta#alimentos-salados
-    elif  "diabetes" in order.lower(): #["diabetes", "diabetico", "diabetica", "diabete"]
-        salud("diabetes")
     elif "clima" in order.lower() or "tiempo" in order.lower():
         dat = ""
         if "en " in order:
@@ -127,14 +119,7 @@ def talk(text):
     print(text)
     nanavoice.say(text)
     nanavoice.runAndWait()
-# ---------------------------------------------------------------------------------------------------------
-'''def notify():
-        Notification().open(
-            title="Recordatorio",
-            icon="./Images/logo blanco.png",
-            message="Los granos integrales son preferibles a los productos de harina blanca o pasta para la hipertensión",
-            timeout=5,
-        )'''
+
 # ---------------------------------------------------------------------------------------------------------
 def tell(x):
     if "quien soy" in x:
@@ -161,23 +146,13 @@ def notify_fech():
     now = dt.now()
     if data["perfil"]["cumpleaos"] == f"{now.day}-{now.month}-{now.year}":
         x,y = ((now.year) - data["perfil"]["cumpleaos"][6:10]), data["perfil"]["Nombre"]
-        talk(f"FELICIDADES {y} , HOY ES TU CUMPLEAÑOS NUMERO {x}")# AÑADIR tambien como RECORDATORIO
+        talk(f"FELICIDADES {y} , HOY ES TU CUMPLEAÑOS NUMERO {x}") #AÑADIR tambien como RECORDATORIO
 # ---------------------------------------------------------------------------------------------------------
-def salud(illness):
-    tell = ["", ""]
-    for i in data["salud"]["frase"]:
-        tell[0] += i[random.randint(0, len(i)-1)] + " "
-    tell[0] += "."
-    if illness == "diabetes":
-        tell[1] = "dbetes"
-    else:
-        tell[1] = "hipert"
-    for i in range(1, len(data["salud"][tell[1]])+1):
-        temp = data["salud"][tell[1]][i-1]
-        tell[0] += f"{i}, {temp}. "
-    talk(tell[0])
+#def salud(illness):
+#    checkbox_click(self, instance, value, enfermedad)
+#    talk(checkbox_click)
 # ---------------------------------------------------------------------------------------------------------
-def show_notification(self, tittle, message): #usando plyer
+def show_notification(self, tittle, message):  # usando plyer
     notification.notify(
         title=tittle,
         message=message,
@@ -185,25 +160,20 @@ def show_notification(self, tittle, message): #usando plyer
         app_name="Nana",
         app_icon="./Images/LOGO NANA.ico"
     )
+#def checkbox_click(self, instance, value, enfermedad):
+#    enfermedades = []
+#    if value == True:
+#        PersonScreen.enfermedades.append(enfermedad)
+#        output = ''
+#        for x in MyLayout.checks:
+#            output = f'{output} {x}'
+#        self.ids.output_label.text = f"{output}"
+#    else:
+#        PersonScreen.enfermedades.remove(enfermedad)
+#        output = ''
+#        for x in MyLayout.checks:
+#            output = f'{output} {x}'
+#        self.ids.output_label.text = f"{output}"
+#    return output
 
-def show_notificacions(self, tittle, message): #usando kvdroid 
-    create_notification(
-        small_icon="./Images/LOGO NANA.ico",  # app icon
-        channel_id="1", title="You have a message",
-        text="hi, just wanted to check on you",
-        ids=1, channel_name=f"ch1",  # no se de que se trata esto
-        large_icon="assets/image.png",  # creo que esto es el icono que va al lado del texto
-        expandable=True,
-        small_icon_color=Color().rgb(0x00, 0xCC, 0x00),  # 0x00 0xCC 0x00 para lightgreen 00CC00
-        big_picture="assets/image.png"  # esto tampoco se que es
-    )
 # ---------------------------------------------------------------------------------------------------------
-phone_book=get_contact_details("phone_book")  # gets a dictionary of all contact both contact name and phone mumbers
-nombres = get_contact_details("names")  # gets a list of all contact names
-tlf = get_contact_details("mobile_no")  # gets a list of all contact phone numbers
-
-def extraer_contactos(self, nombres, tlf):
-    for y in tlf:
-        for i in nombres:
-            contactos[y] = i
-

@@ -1,7 +1,6 @@
 # =========================================================================================================
 #from turtle import width
-from kivy.config import Config
-Config.set('kivy', 'keyboard_mode', 'systemandmulti')
+
 from kivy.app import App
 from kivy.uix.widget import Widget
 from kivymd.app import MDApp
@@ -24,6 +23,7 @@ import function as f
 import json
 import random
 import webbrowser
+
 # ============================================================================== Archivos =================
 #  >> Carga de archivos:
 # ---------------------------------------------------------------------------------------------------------
@@ -35,7 +35,7 @@ firebase_admin.initialize_app(firebase_sdk, {'databaseURL': 'https://nanaapp-def
 
 #Recordatorios
 reminders = db.reference('/Reminders')
-
+#contacts = db.reference('/Notification')
 # ---------------------------------------------------------------------------------------------------------
 #  >> Paneles
 # ---------------------------------------------------------------------------------------------------------
@@ -70,15 +70,6 @@ class NanaApp(MDApp):
         order = f.take_command()
         f.talk(data["query"][random.randint(0, len(data["query"]) - 1)])
         f.run_nana(order)
-
-
-    def profile(self):
-        webbrowser.open_new_tab(
-            'https://www.google.com/search?q=como+crear+perfil&client=opera-gx&sxsrf=ALiCzsbEvkZRB-XStGjrA7B8OmgWvB8rdg%3A1667780750279&ei=jlBoY97aEJyZwbkPuKOL-Ac&ved=0ahUKEwje2bu555r7AhWcTDABHbjRAn8Q4dUDCA4&uact=5&oq=como+crear+perfil&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQ6CggAEEcQ1gQQsAM6BwgAELADEEM6DQgAEOQCENYEELADGAE6BAgjECc6CggAEIAEEIcCEBQ6CAgAELEDEIMBOgUIABCxAzoLCAAQgAQQsQMQgwE6CAgAEIAEELEDOggIABCABBDJA0oECE0YAUoECEEYAEoECEYYAVCCzgNYnuwDYLPuA2gCcAF4AoABvgWIAY0gkgENMi44LjIuMy4wLjEuMZgBAKABAcgBEcABAdoBBggBEAEYCQ&sclient=gws-wiz-serp')
-
-    def call(self):
-        webbrowser.open_new_tab(
-            'https://www.google.com/search?q=como+llamar&client=opera-gx&sxsrf=ALiCzsbpqNiZ73J-mRKVXwcrIKb2JxxmEw%3A1667780733762&ei=fVBoY7qXLsyGwbkPn-CfyAI&ved=0ahUKEwj6ycux55r7AhVMQzABHR_wBykQ4dUDCA4&uact=5&oq=como+llamar&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIKCAAQgAQQhwIQFDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDoHCCMQ6gIQJzoECCMQJzoKCC4QxwEQ0QMQQzoICAAQgAQQsQM6CwgAEIAEELEDEIMBOg4ILhCABBCxAxDHARDRAzoRCC4QgAQQsQMQgwEQxwEQ0QM6DQguEMcBENEDENQCEEM6BwgAEIAEEAM6CAgAELEDEIMBOgQIABBDOgsIABCABBCxAxDJAzoLCC4QgAQQsQMQgwE6CAguEIAEENQCSgQITRgBSgQIQRgASgQIRhgAUABY3g5g5RJoAXABeACAAe8BiAGmDZIBBTAuOC4zmAEAoAEBsAEKwAEB&sclient=gws-wiz-serp')
 
     def search(self):
         order = self.root.get_screen('MDScreen').ids.data.text
@@ -161,7 +152,6 @@ class NanaApp(MDApp):
     def on_save(self, instance, value, date_range):
         self.root.get_screen('CalendarScreen').ids.date_label.text = f'{str(date_range[0])} / {str(date_range[-1])}'
 
-
     def on_cancel(self, instance, value):
         self.root.get_screen('CalendarScreen').ids.date_label.text = ""
 
@@ -182,7 +172,7 @@ class NanaApp(MDApp):
         from datetime import datetime
 
         # Define default time
-        default_time = datetime.strptime("4:20:00", '%H:%M:%S').time()
+        default_time = datetime.strptime("00:00:00", '%H:%M:%S').time()
 
         time_dialog = MDTimePicker()
         # Set default Time
@@ -190,17 +180,12 @@ class NanaApp(MDApp):
         time_dialog.bind(on_cancel=self.on_cancel, time=self.get_time)
         time_dialog.open()
 
-
     def save_event(self):
         time = self.root.get_screen('CalendarScreen').ids.time_label.text
         date = self.root.get_screen('CalendarScreen').ids.date_label.text
         value = self.root.get_screen('CalendarScreen').ids.date_name.text
-        if date not in self.eventos.keys():
-            self.eventos[date] = {}
-            self.eventos[date][time] = value
-        else:
-            self.eventos[date][time] = value
-        print(self.eventos)
+        reminders.push({"date": date, "time": time, "reminder": value})
+        f.show_notification(self, "Nuevo recordatorio", f'Agendaste {value} el {date} a las {time}')
 
         self.root.get_screen('CalendarScreen').ids.time_label.text = ""
         self.root.get_screen('CalendarScreen').ids.date_label.text = ""
@@ -233,7 +218,7 @@ class NanaApp(MDApp):
         else:
             self.contactos[nombre][apellido] = str(tlf)
 
-        print(self.contactos)
+        return self.contactos
 
         self.root.get_screen('ContactoScreen').ids.name_label.text = ""
         self.root.get_screen('ContactoScreen').ids.lastname_label.text = ""
@@ -242,12 +227,10 @@ class NanaApp(MDApp):
     def appnt_listCon(self):
         for i in list(self.contactos.keys()):
             for y in list(self.contactos[i].keys()):
-                items = ThreeLineListItem(text=str(i+" "+y), secondary_text=str(self.contactos[i][y]), tertiary_text="cpnyactos")
+                items = ThreeLineListItem(text=str(i+" "+y), secondary_text=str(self.contactos[i][y] ), tertiary_text="contactos")
         self.root.get_screen('ListaConScreen').ids.ContactContainer.add_widget(items)
 
 # ---------------------------------------------------------------------------------------------------------
 if __name__ == "__main__":
     NanaApp().run()
-    #NanaApp().show_notification("hey user", "take a break now")
-    NanaApp().notificar_recordatorio(eventos)
 # ---------------------------------------------------------------------------------------------------------
