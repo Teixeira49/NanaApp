@@ -13,21 +13,58 @@
         ["Lo siento", "Disculpa", "Perdona"],
         ["No se te ha entendido", "Puedes repetir esa frase?", "Prueba decir otra vez lo que quieres"]
         ],
-    "help": "Para ayudar ",
-    "hi": [""],
+    "salud": {
+        "frase": [
+            ["Segun mi informacion debo recordarte", "Te recuerdo que"],
+            ["No puedes consumir alimentos", "No es bueno para tu salud consumir"]
+    ],
+        "dbetes": ["dulces",  "Alcohol", "Grasas Trans"],
+        "hipert": ["Salados", "dulces", "Carne roja", "Grasas saturadas"]
+    },
     "tell_phrase": {
         "comedy": [
             "Eliminar correos no deseados es muy facil: spam comido",
-            "Qué dice una cereza mirándose al espejo?: Cere eza?",
+            "Que dice una cereza mirandose al espejo?: Cere eza?",
             "Cual es el peinado favorito de los carteros? Los tirabuzones",
             "Cual es el colmo de una azafata? Enamorarse del piloto automatico",
-            "Una vez conté un chiste químico, pero no hubo reaccion.",
+            "Una vez conté un chiste quimico, pero no hubo reaccion.",
             "Cual es el nombre del pez que cae de un cuarto piso? Aaaaaaaaaaaaaaaaaahhhhhh... tun!",
-            "Quién es el papa del príncipe azul? El Blu ray",
-            "Por que un mago no sería bueno en el boxeo? Porque seria el magolpeado"
+            "Quien es el papa del principe azul? El Blu ray",
+            "Por que un mago no seria bueno en el boxeo? Porque seria el magolpeado",
+            "Como te reconocere?. Mido 1,60 y peso 58 kgs. Y yo a ti?. Llevo un metro y una bascula.",
+            "Paciente: Doctor, me duele aqui. Doctor: Pues pongase alli. Paciente: Doctor, me sigue doliendo. Doctor: Doliendo, deje de seguir al paciente.",
+            "¿Por que los diabeticos no pueden vengarse? Porque la venganza es dulce.",
+            "Una familia ocupó un terreno en Hawaii. Ahora a ver quien la des aloha.",
+            "Que le dice un huevo a una sarten? Me tienes frito.",
+            "Que hace un boli Bic en el aire? AeroBic.",
+            "Por que le dio un paro cardiaco a la impresora? Parece que tuvo una impresion muy fuerte.",
+            "Doctor, creo que necesito gafas. Estoy de acuerdo, pero no puedo ayudarle, esto es un banco!",
+            "Por qué no se puede discutir con un DJ? Porque siempre cambia de tema"
         ],
-        "m_story": [],
-        "phrase": []
+        "m_story": [
+            "El falso maestro Era un renombrado maestro Uno de esos maestros que corren tras la fama y gustan de acumular mas y mas discipulos En una descomunal carpa, reunio a varios cientos de discipulos y seguidores Se irguio sobre si mismo, imposto la voz y dijo Amados mios, escuchen la voz del que sabe Se hizo un gran silencio Hubiera podido escucharse el vuelo precipitado de un mosquito Nunca deben relacionarse con la mujer de otro. nunca Tampoco deben jamas beber alcohol, ni alimentarse con carne Uno de los asistentes se atrevio a preguntar El otro dia, no eras tu el que estabas abrazado a la esposa de Jai? Si, yo era repuso el maestro Entonces, otro oyente preguntoNo te vi a ti el otro anochecer bebiendo en la taberna? ese era yo contesto el maestro Un tercer hombre interrogo al maestro No eras tu el que el otro dia comias carne en el mercado? Efectivamente afirmo el maestro En ese momento todos los asistentes se sintieron indignados y comenzaron a protestar Entonces, por que nos pides a nosotros que no hagamos lo que tu haces? Y el falso maestro repuso Porque yo enseño, pero no practico.",
+            "Nadie sabe que despues de medianoche baja de su trono y en Plaza Italia se divierte con los santos. Nadie sabe que antes de que amanezca vuelve al cerro corriendo y llega jadeando a su posicion original. Nadie se ha fijado que con tanto subir y bajar, la Virgen cada dia se pone mas flaca y la ropa le va quedando grande",
+            "Erase una vez una pareja de granjeros que, un dia, descubrieron en uno de los nidos en los que criaban gallinas un huevo de oro macizo. La pareja fue observando que el ave producia tal prodigio dia tras dia, obteniendo cada dia un huevo de oro. Reflexionando sobre que era lo que hacia que la gallina en cuestion tuviese esa habilidad, sospecharon que esta poseia oro en su interior. Para comprobarlo y obtener todo el oro de una vez, mataron a la gallina y la abrieron, descubriendo para su sorpresa que por dentro la prodigiosa ave era igual a las demas. Y tambien se dieron cuenta que, en su ambicion, habian acabado con aquello que les habia estado enriqueciendo.",
+            "En un desierto lugar del Iran hay una no muy alta torre de piedra, sin puerta ni ventana. En la unica habitacion (cuyo piso es de tierra y que tiene la forma de circulo) hay una mesa de madera y un banco. En esa celda circular, un hombre que se parece a mi escribe, en caracteres que no comprendo, un largo poema sobre un hombre que en otra celda circular escribe un poema sobre un hombre que en otra celda circular. El proceso no tiene fin y nadie podra leer lo que los prisioneros escriben",
+            "Un pobre cronopio va en su automovil y al llegar a una esquina le fallan los frenos y choca contra otro auto. Un vigilante se acerca terriblemente y saca una libreta con tapas azules.  No sabe manejar, usted? grita el vigilante.El cronopio lo mira un momento, y luego pregunta.Usted quien es?.El vigilante se queda duro, echa una ojeada a su uniforme como para convencerse de que no hay error.Como que quien soy? No ve quien soy?. Yo veo un uniforme de vigilante explica el cronopio muy afligido. Usted esta dentro del uniforme, pero el uniforme no me dice quien es usted. El vigilante levanta la mano para pegarle, pero en la mano tiene la libreta y en la otra mano el lapiz, de manera que no le pega y se va adelante a copiar el numero de la chapa. El cronopio esta muy afligido y quisiera no haber chocado, porque ahora le seguiran haciendo preguntas y el no podra contestarlas, ya que no sabe quien se las hace y entre desconocidos uno no puede entenderse."
+        ],
+        "phrase": [
+            "No se trata de si van a derribarte, se trata de si vas a levantarte cuando lo hagan. Vince Lombardi",
+            "Nadie puede hacerte sentir inferior sin tu consentimiento. Eleanor Roosevelt",
+            "Que maravilloso es que nadie tenga que esperar ni un segundo para empezar a mejorar el mundo. Ana Frank",
+            "El pesimista ve dificultades en cada oportunidad. El optimista ve oportunidades en cada dificultad. Winston Churchill",
+            "Muchos piensan en cambiar el mundo, pero casi nadie piensa en cambiarse a si mismo. Leon Tolstoi",
+            "Si estas trabajando en algo que te importa de verdad, nadie tiene que empujarte: tu visión te empuja. Steve Jobs",
+            "La mayor parte de las grandes cosas que ha conseguido el hombre, fueron declaradas imposibles antes de que alguien las hiciera. Louis D. Brandeis",
+            "La verdadera motivacion procede de trabajar en cosas que nos importan. Sheryl Sandberg",
+            "La energia y la persistencia conquistan todas las cosas. Benjamin Franklin",
+            "Se amable, porque toda persona que conoces esta librando una gran batalla. Platon",
+            "La logica te llevara de la A a la Z. La imaginacion te llevara a cualquier lugar. Albert Einstein",
+            "Las ideas no duran mucho. Hay que hacer algo con ellas. Santiago Ramon y Cajal",
+            "Te deseo que estes vivo cada daa de tu vida. Jonathan Swift",
+            "La excelencia no es un acto, es un habito. Aristoteles",
+            "Se tu mismo. Todos los demas ya estan ocupados. Oscar Wilde."
+        ]
     },
     "weathers":{
         "key": "5690d56c8ea84aa3a5f9eb04133c83a6",
@@ -39,4 +76,3 @@
             }
     }
 }
-

@@ -1,3 +1,6 @@
+# ============================================================================================
+#  >> VISTAS y PANELES de la APP
+# --------------------------------------------------------------------------------------------
 ScreenManager:
     id: screen_manager
     MDScreen:
@@ -8,7 +11,26 @@ ScreenManager:
         id: person_screen
         name: 'PersonScreen'
         manager: 'screen_manager'
-
+    SmsScreen:
+        id: sms_screen
+        name: 'SmsScreen'
+        manager: 'screen_manager'
+    CalendarScreen:
+        id: calendar_screen
+        name: 'CalendarScreen'
+        manager: 'screen_manager'
+    AppointmentScreen:
+        id: appointment_screen
+        name: 'AppointmentScreen'
+        manager: 'screen_manager'
+    ContactoScreen:
+        id: contacto_screen
+        name: 'ContactoScreen'
+        manager: 'screen_manager'
+    ListaConScreen:
+        id: lista_con_screen
+        name: 'ListaConScreen'
+        manager: 'screen_manager'
 # ============================================================================================
 #  >> VENTANA PRINCIPAL
 # ============================================================================================
@@ -24,244 +46,479 @@ ScreenManager:
 # --------------------------------------------------------------------------------------------
     MDFloatingActionButton:
         icon: "account"
-        md_bg_color:[0.34,1.93,1.24,1]
         icon_color: "white"
         theme_icon_color: "Custom"
-        pos_hint : {'center_x': 0.95, 'center_y': 0.95}
+        elevation: 0
+        pos_hint : {'center_x': 0.55, 'center_y': 0.30}
         size_hint: 0.075, 0.07
-        icon_size_hint: "80sp"
+        icon_size_hint: "100sp"
         padding: 5
         on_release: app.root.current = 'PersonScreen'
+#---------------------------------------------------------------------------------------------
+    MDFloatingActionButton:
+        icon: "book-account"
+        icon_color: "white"
+        theme_icon_color: "Custom"
+        elevation: 0
+        pos_hint : {'center_x': 0.45, 'center_y': 0.30}
+        size_hint: 0.075, 0.07
+        icon_size_hint: "100sp"
+        padding: 5
+        on_release: app.root.current = 'ContactoScreen'
 # --------------------------------------------------------------------------------------------
-    MDRectangleFlatButton:
-        text: "Help"
-        text_color: "black"
-        line_color: "black"
-        md_bg_color:[1,0,0,1]
-        pos_hint : {'center_x': 0.1, 'center_y': 0.95}
-        size_hint: 0.05, 0.015
-        on_press: app.call()
+    #MDRectangleFlatButton:
+    #    text: "Help"
+    #    text_color: "black"
+    #    line_color: "red"
+    #    md_bg_color:[1,0,0,1]
+    #    pos_hint : {'center_x': 0.2, 'center_y': 0.95}
+    #    size_hint: 0.015, 0.015
+    #    on_press: app.call()
 # --------------------------------------------------------------------------------------------
     MDLabel:
         text: "Bienvenido persona"
         color: 0,0,0
         font_size: "20sp"
-        pos_hint : {'center_y': 0.85}
+        pos_hint : {'center_y': 0.87}
         halign: 'center'
         font_family: 'khmer'
 # ============================================================================================
 #  >> MICROFONO
 # --------------------------------------------------------------------------------------------
-    MDFloatingActionButton:                         # Boton del microfono
+    MDFloatingActionButton:                                 # Boton del microfono
         icon: "microphone"
         icon_color: "white"
+        elevation: 0
         pos_hint : {'center_x': 0.5, 'center_y': 0.70}
         on_press : app.callback()
         size_hint: 0.25, 0.22
-        icon_size: "120sp"
+        icon_size: "105sp"
         border: 0,0,0,0
 # --------------------------------------------------------------------------------------------
-    MDLabel:                                        # Mensaje de funcion
+    MDLabel:                                                # Mensaje de funcion
         text: "Presione aqui y habla"
         color: 0,0,0
         font_size: "20sp"
-        pos_hint : {'center_y': 0.55}
+        pos_hint : {'center_y': 0.53}
         halign: 'center'
         font_family: 'khmer'
-# --------------------------------------------------------------------------------------------        
+# --------------------------------------------------------------------------------------------
     MDTextField:
         id: data
-        hint_text: "¿Que desea buscar?"
+        hint_text: "¿Qué desea buscar?"
         helper_text_mode: "on_focus"
         color_mode: 'accent'
         mode: "rectangle"
-        pos_hint : {'center_x': 0.4, 'center_y': 0.45}
-        max_text_length: 20
-        size_hint: 0.6, 0.1
-        icon_right: "android"
+        pos_hint : {'center_x': 0.5, 'center_y': 0.45}
+        max_text_length: 1000
+        size_hint: 0.5, 0.1
 # --------------------------------------------------------------------------------------------
     MDFloatingActionButton:
-        icon: "search"
+        icon: "magnify"
+        icon_color: "white"
         line_color: "green"
         on_press: app.search()
-        pos_hint : {'center_x': 0.8, 'center_y': 0.45}
-
+        elevation: 0
+        pos_hint : {'center_x': 0.83, 'center_y': 0.44}
 # --------------------------------------------------------------------------------------------
-    MDTextField:
-        id: people
-        hint_text: "persona"
-        helper_text_mode: "on_focus"
-        color_mode: 'accent'
-        mode: "rectangle"
-        pos_hint : {'center_x': 0.25, 'center_y': 0.2}
-        size_hint: 0.2, 0.1
-        max_text_length: 15
+    MDFloatingActionButton:
+        icon: "whatsapp"
+        icon_color: "white"
+        theme_icon_color: "Custom"
+        elevation: 0
+        pos_hint : {'center_x': 0.55, 'center_y': 0.20}
+        size_hint: 0.075, 0.07
+        icon_size_hint: "100sp"
+        padding: 5
+        on_release: app.root.current = 'SmsScreen'
 # --------------------------------------------------------------------------------------------
-    MDTextField:
-        id: msg
-        hint_text: "Mensaje a enviar"
-        helper_text_mode: "on_focus"
-        color_mode: 'accent'
-        mode: "rectangle"
-        pos_hint : {'center_x': 0.75, 'center_y': 0.2}
-        size_hint: 0.4, 0.1
-        max_text_length:
-
-# --------------------------------------------------------------------------------------------
-    MDRectangleFlatButton:
-        text: "SMS"
-        text_color: "black"
-        md_bg_color:[0,1,1,1]
-        line_color: "black"
-        on_press: app.send_people()
-        pos_hint : {'center_x': 0.5, 'center_y': 0.05}
+    MDFloatingActionButton:
+        icon: "calendar"
+        icon_color: "white"
+        theme_icon_color: "Custom"
+        elevation: 0
+        pos_hint : {'center_x': 0.45, 'center_y': 0.20}
+        size_hint: 0.075, 0.07
+        icon_size_hint: "100sp"
+        padding: 5
+        on_release: app.root.current = 'CalendarScreen'
 # ============================================================================================
 #  >> VENTANA DE PERFIL
 # --------------------------------------------------------------------------------------------
 <PersonScreen>
-    MDLabel:                                        # Titulo
-        text: "Perfil de usuario: "
+    MDLabel:                                                # Titulo De la Pantalla
+        text: "Agregue sus datos"
         color: 0,0,0
-        font_size: "20sp"
+        font_size: "40sp"
         pos_hint : {'center_x': 0.5, 'center_y': 0.85}
         halign: 'center'
         font_family: 'khmer'
-    MDRectangleFlatButton:                          # Return al inicio:
+
+    MDRectangleFlatButton:
         text: 'Volver'
         font_size: 25
-        pos_hint : {'center_x': 0.5, 'center_y': 0.07}
+        pos_hint : {'center_x': 0.5, 'center_y': 0.2}
         on_release: app.root.current = 'MDScreen'
 # --------------------------------------------------------------------------------------------
 # Nombre del usuario:
 # --------------------------------------------------------------------------------------------
-    MDTextField:                                    # Campo para el nombre del usuario
-        id: people
-        hint_text: "persona"
+    MDTextField:                                            # Campo para el nombre del usuario
+        id: nombre
+        hint_text: "Nombre"
         helper_text_mode: "on_focus"
         color_mode: 'accent'
         mode: "rectangle"
-        pos_hint : {'center_x': 0.58, 'center_y': 0.75}
+        pos_hint : {'center_x': 0.58, 'center_y': 0.70}
         size_hint: 0.635, 0.1
         max_text_length: 20
 # --------------------------------------------------------------------------------------------
-    MDLabel:                                        # Aqui va su nombre
+    MDLabel:                                                # Aqui va su nombre
         text: "Nombre: "
         color: 0,0,0
         font_size: "20sp"
-        pos_hint : {'center_x': 0.21, 'center_y': 0.75}
+        pos_hint : {'center_x': 0.21, 'center_y': 0.70}
         halign: 'center'
         font_family: 'khmer'
 # --------------------------------------------------------------------------------------------
 # Apellido del usuario:
 # --------------------------------------------------------------------------------------------
-    MDTextField:                                    # Campo para el apellido del usuario
-        id: people
-        hint_text: "persona"
+    MDTextField:                                            # Campo para el apellido del usuario
+        id: apellido
+        hint_text: "Apellido"
         helper_text_mode: "on_focus"
         color_mode: 'accent'
         mode: "rectangle"
-        pos_hint : {'center_x': 0.58, 'center_y': 0.65}
+        pos_hint : {'center_x': 0.58, 'center_y': 0.58}
         size_hint: 0.635, 0.1
         max_text_length: 39
 # --------------------------------------------------------------------------------------------
-    MDLabel:                                        # Aqui va su apellido
+    MDLabel:                                                # Aqui va su apellido
         text: "Apellido: "
         color: 0,0,0
         font_size: "20sp"
-        pos_hint : {'center_x': 0.21, 'center_y': 0.65}
+        pos_hint : {'center_x': 0.21, 'center_y': 0.58}
         halign: 'center'
         font_family: 'khmer'
 # --------------------------------------------------------------------------------------------
 # DNI del usuario:
 # --------------------------------------------------------------------------------------------
-    MDTextField:                                    # Campo para el DNI del usuario
-        id: people
-        hint_text: "persona"
-        helper_text_mode: "on_focus"
-        color_mode: 'accent'
-        mode: "rectangle"
-        pos_hint : {'center_x': 0.58, 'center_y': 0.55}
-        size_hint: 0.635, 0.1
-        max_text_length: 15
+    #MDTextField:                                            # Campo para el DNI del usuario
+    #    id: cedula
+    #    hint_text: "cedula"
+    #    helper_text_mode: "on_focus"
+    #    color_mode: 'accent'
+    #    mode: "rectangle"
+    #    pos_hint : {'center_x': 0.58, 'center_y': 0.45}
+    #    size_hint: 0.635, 0.1
+    #    max_text_length: 15
+# --#------------------------------------------------------------------------------------------
+    #MDLabel:                                                # Aqui va su DNI
+    #    text: "Cedula: "
+    #    hint_text: "cedula"
+    #    color: 0,0,0
+    #    font_size: "20sp"
+    #    pos_hint : {'center_x': 0.21, 'center_y': 0.45}
+    #    halign: 'center'
+    #    font_family: 'khmer'
 # --------------------------------------------------------------------------------------------
-    MDLabel:                                        # Aqui va su DNI
-        text: "Cedula: "
-        color: 0,0,0
-        font_size: "20sp"
-        pos_hint : {'center_x': 0.21, 'center_y': 0.55}
-        halign: 'center'
-        font_family: 'khmer'
+#   >> Seccion de cumpleaños:
 # --------------------------------------------------------------------------------------------
-# Seccion de cumpleaños:
-# --------------------------------------------------------------------------------------------
-    MDLabel:                                        # Aqui va su nombre
+    MDLabel:                                                # Aqui va su nombre
         text: "Cumpleaños: "
         color: 0,0,0
         font_size: "20sp"
-        pos_hint : {'center_x': 0.5, 'center_y': 0.45}
+        pos_hint : {'center_x': 0.18, 'center_y': 0.46}
         halign: 'center'
         font_family: 'khmer'
 # --------------------------------------------------------------------------------------------
-    #MDDropDownItem:
-    #    id: dropper
-    #    pos_hint : {'center_x': 0.55, 'center_y': 0.35}
-    #    text: "day"
-    #    on_release: self.set_item("1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31")
-    MDTextField:                                    # Campo para el apellido del usuario
-        id: people
+    MDTextField:                                            # Campo para el apellido del usuario
+        id: dia_bd
         hint_text: "Dia"
         helper_text_mode: "on_focus"
         color_mode: 'accent'
         mode: "rectangle"
-        pos_hint : {'center_x': 0.5, 'center_y': 0.35}
+        pos_hint : {'center_x': 0.36, 'center_y': 0.46}
         size_hint: 0.2, 0.1
         max_text_length: 2
-    MDTextField:                                    # Campo para el apellido del usuario
-        id: people
+    MDTextField:                                            # Campo para el apellido del usuario
+        id: mes_bd
         hint_text: "Mes"
         helper_text_mode: "on_focus"
         color_mode: 'accent'
         mode: "rectangle"
-        pos_hint : {'center_x': 0.29, 'center_y': 0.35}
+        pos_hint : {'center_x': 0.58, 'center_y': 0.46}
         size_hint: 0.2, 0.1
         max_text_length: 2
-    MDTextField:                                    # Campo para el apellido del usuario
-        id: people
+    MDTextField:                                            # Campo para el apellido del usuario
+        id: anio_bd
         hint_text: "Año"
         helper_text_mode: "on_focus"
         color_mode: 'accent'
         mode: "rectangle"
-        pos_hint : {'center_x': 0.71, 'center_y': 0.35}
+        pos_hint : {'center_x': 0.80, 'center_y': 0.46}
         size_hint: 0.2, 0.1
         max_text_length: 4
+# ------------------------------------------------------------------------------------------------------
+    #BoxLayout:
+    #    orientation: "vertical"
+    #    size: root.width, root.height
+    #    MDGridLayout:
+    #        cols: 2
+    #        MDLabel:
+    #            text: "Hipertenso"
+    #            font_size: 20
+    #            pos_hint : {'center_x': 0.20, 'center_y': 0.25}
+    #            halign: 'center'
+    #            font_family: 'khmer'
+    #        MDCheckbox:
+    #            pos_hint : {'center_x': 0.40, 'center_y': 0.25}
+    #            on_active: root.checkbox_click(self,self.active, "hipertenso")
+    #        MDLabel:
+    #            text: "Alzehimer"
+    #            font_size: 20
+    #            pos_hint : {'center_x': 0.20, 'center_y': 0.25}
+    #            halign: 'center'
+    #            font_family: 'khmer'
+    #        MDCheckbox:
+    #            pos_hint : {'center_x': 0.40, 'center_y': 0.25}
+    #            on_active: root.checkbox_click(self,self.active, "alzehimer")
+    #        MDLabel:
+    #            text: "Diabetes"
+    #            font_size: 20
+    #            pos_hint : {'center_x': 0.20, 'center_y': 0.25}
+    #            halign: 'center'
+    #            font_family: 'khmer'
+    #        MDCheckbox:
+    #            pos_hint : {'center_x': 0.40, 'center_y': 0.25}
+    #            on_active: root.checkbox_click(self,self.active, "diabetes")
+#
+    #        MDLabel:
+    #            id: output_label
+    #            text: ""
+    #            font_size: 20
+    #            halign: 'center'
+# ======================================================================================================
+#   >> Modulo de mensaje
+# ------------------------------------------------------------------------------------------------------
+<SmsScreen>
+# ------------------------------------------------------------------------------------------------------
+    MDLabel:
+        text: "Enviar WhatsApp"
+        color: 0,0,0
+        font_size: "40sp"
+        pos_hint : {'center_x': 0.5, 'center_y': 0.85}
+        halign: 'center'
+        font_family: 'khmer'
+# ------------------------------------------------------------------------------------------------------
+    MDTextField:
+        id: people
+        hint_text: "nombre persona"
+        helper_text_mode: "on_focus"
+        color_mode: 'accent'
+        mode: "rectangle"
+        pos_hint : {'center_x': 0.45, 'center_y': 0.65}
+        size_hint: 0.45, 0.1
+        max_text_length: 1000
+# ------------------------------------------------------------------------------------------------------
+    MDTextField:
+        id: msg
+        hint_text: "Escribir mensaje"
+        helper_text_mode: "on_focus"
+        color_mode: 'accent'
+        mode: "rectangle"
+        pos_hint : {'center_x': 0.45, 'center_y': 0.5}
+        size_hint: 0.45, 0.1
+        max_text_length:
+# ------------------------------------------------------------------------------------------------------
+    MDRectangleFlatButton:
+        text: "Enviar"
+        text_color: "green"
+        line_color: "green"
+        on_press: app.send_people()
+        pos_hint : {'center_x': 0.75, 'center_y': 0.5}
+# ------------------------------------------------------------------------------------------------------
+    MDRectangleFlatButton:                                  # Return al inicio:
+        text: 'Volver'
+        font_size: 25
+        pos_hint : {'center_x': 0.5, 'center_y': 0.2}
+        on_release: app.root.current = 'MDScreen'
+# ------------------------------------------------------------------------------------------------------
+    #MDFloatingActionButton:
+    #    icon: "whatsapp"
+    #    icon_color: "white"
+    #    theme_icon_color: "Custom"
+    #    elevation: 0
+    #    pos_hint : {'center_x':0.5, 'center_y': 0.8}
+    #    size_hint: 0.1, 0.1
+    #    icon_size_hint: "100sp"
+    #    padding: 5
+# ======================================================================================================
+#   >> Modulo de calendario
+# ------------------------------------------------------------------------------------------------------
+<CalendarScreen>
+# ------------------------------------------------------------------------------------------------------
+    MDLabel:
+        id: new_recordatorio
+        text: "Nuevo recordatorio"
+        pos_hint:{'center_x': 0.5, 'center_y': 0.85}
+        font_size: "30sp"
+        halign: 'center'
+        bold: True
+        font_family: 'niramit'
+# ------------------------------------------------------------------------------------------------------
+    MDTextField:
+        id: date_name
+        hint_text: " ¿Qué hay para esta fecha?"
+        helper_text_mode: "on_focus"
+        color_mode: 'accent'
+        mode: "rectangle"
+        pos_hint : {'center_x': 0.5, 'center_y': 0.67}
+        max_text_length: 1000
+        size_hint: 0.4, 0.1
+# ------------------------------------------------------------------------------------------------------
+    MDRaisedButton:
+        text: "Seleccionar fecha"
+        elevation: 0
+        pos_hint:{'center_x': 0.4, 'center_y': 0.45}
+        on_release: app.show_date_picker()
+# ------------------------------------------------------------------------------------------------------
+    MDLabel:
+        id: date_label
+        text: ""
+        pos_hint:{'center_x': 0.90, 'center_y': 0.57}
+# ------------------------------------------------------------------------------------------------------
+    MDRaisedButton:
+        text: "Seleccionar hora"
+        elevation: 0
+        pos_hint: {'center_x': 0.6, 'center_y': 0.45}
+        on_release: app.show_time_picker()
+# ------------------------------------------------------------------------------------------------------
+    MDLabel:
+        id: time_label
+        text: ""
+        pos_hint: {'center_x': .096, 'center_y': 0.52}
+# ------------------------------------------------------------------------------------------------------
+    MDRaisedButton:
+        text: "Guardar"
+        elevation: 0
+        pos_hint:{'center_x': 0.5, 'center_y': 0.35}
+        on_release:
+            app.save_event()
+            app.appnt_list()
+# ------------------------------------------------------------------------------------------------------
+    MDRectangleFlatButton:
+        text: 'Ver recordatorios'
+        font_size: 20
+        elevation: 0
+        pos_hint : {'center_x': 0.60, 'center_y': 0.2}
+        on_release: app.root.current = 'AppointmentScreen'
+# ------------------------------------------------------------------------------------------------------
+    MDRectangleFlatButton:
+        text: 'Volver'
+        font_size: 20
+        pos_hint : {'center_x': 0.35, 'center_y': 0.2}
+        on_release: app.root.current = 'MDScreen'
+# ------------------------------------------------------------------------------------------------------
+<AppointmentScreen>
+# ------------------------------------------------------------------------------------------------------
+    ScrollView:
+        MDList:
+            id: container
+# ------------------------------------------------------------------------------------------------------
+    MDRectangleFlatButton:
+        text: 'Volver'
+        font_size: 20
+        pos_hint : {'center_x': 0.5, 'center_y': 0.2}
+        on_release: app.root.current = 'CalendarScreen'
+# ------------------------------------------------------------------------------------------------------
+<ContactoScreen>
+    MDLabel:
+        id: contacto
+        text: "Agregar contactos"
+        color: 0,0,0
+        font_size: "40sp"
+        pos_hint : {'center_x': 0.5, 'center_y': 0.85}
+        halign: 'center'
+        font_family: 'khmer'
 
-    MDLabel:                                        # Aqui va su DNI
-        text: "Hipertenso"
-        color: 0,0,0
-        font_size: "20sp"
-        pos_hint : {'center_x': 0.20, 'center_y': 0.25}
-        halign: 'center'
-        font_family: 'khmer'
-    MDLabel:                                        # Aqui va su DNI
-        text: "Diabetico"
-        color: 0,0,0
-        font_size: "20sp"
-        pos_hint : {'center_x': 0.20, 'center_y': 0.20}
-        halign: 'center'
-        font_family: 'khmer'
-    MDLabel:                                        # Aqui va su DNI
-        text: "Alzehimer"
-        color: 0,0,0
-        font_size: "20sp"
-        pos_hint : {'center_x': 0.20, 'center_y': 0.15}
-        halign: 'center'
-        font_family: 'khmer'
-    MDCheckbox:
-        pos_hint : {'center_x': 0.7, 'center_y': 0.25}
-        on_active: app.on_checkbox_active(*args)
-    MDCheckbox:
-        pos_hint : {'center_x': 0.7, 'center_y': 0.20}
-        on_active: app.on_checkbox_active(*args)
-    MDCheckbox:
-        pos_hint : {'center_x': 0.7, 'center_y': 0.15}
-        on_active: app.on_checkbox_active(*args)
+    MDTextField:
+        id: contact_name
+        hint_text: "Nombre"
+        helper_text_mode: "on_focus"
+        color_mode: 'accent'
+        mode: "rectangle"
+        pos_hint : {'center_x': 0.5, 'center_y': 0.70}
+        max_text_length: 256
+        size_hint: 0.4, 0.1
+
+    MDLabel:
+        id: name_label
+        text: ""
+        text_color: "white"
+        pos_hint:{'center_x': 0.1, 'center_y': 0.2}
+
+    MDTextField:
+        id: contact_lastname
+        hint_text: "Apellido"
+        helper_text_mode: "on_focus"
+        color_mode: 'accent'
+        mode: "rectangle"
+        pos_hint : {'center_x': 0.5, 'center_y': 0.58}
+        max_text_length: 128
+        size_hint: 0.4, 0.1
+
+    MDLabel:
+        id: lastname_label
+        text: ""
+        text_color: "white"
+        pos_hint:{'center_x': 0.2, 'center_y': 0.2}
+
+    MDTextField:
+        id: phone_number
+        hint_text: "Numero de tlf"
+        helper_text_mode: "on_focus"
+        color_mode: 'accent'
+        mode: "rectangle"
+        pos_hint : {'center_x': 0.5, 'center_y': 0.46}
+        max_text_length: 11
+        size_hint: 0.4, 0.1
+
+    MDLabel:
+        id: tlf_label
+        text: ""
+        text_color: "white"
+        pos_hint:{'center_x': 0.3, 'center_y': 0.2}
+
+    MDRaisedButton:
+        text: "Guardar"
+        elevation: 0
+        pos_hint:{'center_x': 0.5, 'center_y': 0.34}
+        on_release:
+            app.save_contact()
+            app.appnt_listCon()
+
+    MDRectangleFlatButton:
+        text: 'Ver Contactos'
+        font_size: 20
+        elevation: 0
+        pos_hint : {'center_x': 0.60, 'center_y': 0.2}
+        on_release: app.root.current = 'ListaConScreen'
+
+    MDRectangleFlatButton:
+        text: 'Volver'
+        font_size: 25
+        pos_hint : {'center_x': 0.35, 'center_y': 0.2}
+        on_release: app.root.current = 'MDScreen'
+
+#-------------------------------------------------------------------------------------------------------
+<ListaConScreen>
+# ------------------------------------------------------------------------------------------------------
+    ScrollView:
+        MDList:
+            id: ContactContainer
+
+    MDRectangleFlatButton:
+        text: 'Volver'
+        font_size: 20
+        pos_hint : {'center_x': 0.5, 'center_y': 0.2}
+        on_release: app.root.current = 'ContactoScreen'
